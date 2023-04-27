@@ -115,18 +115,18 @@
       <hashTree/>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="jp@gc - Ultimate Thread Group" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-1746088959">
+          <collectionProp name="1961317478">
             <stringProp name="52469">500</stringProp>
             <stringProp name="48">0</stringProp>
-            <stringProp name="1989496920">${rampUpPeriod}</stringProp>
-            <stringProp name="1222144217">${time}</stringProp>
-            <stringProp name="48">0</stringProp>
+            <stringProp name="48687">120</stringProp>
+            <stringProp name="56313">900</stringProp>
+            <stringProp name="48687">120</stringProp>
           </collectionProp>
-          <collectionProp name="764222127">
+          <collectionProp name="697036924">
             <stringProp name="1626587">5000</stringProp>
-            <stringProp name="1597036885">(${time}/2)</stringProp>
+            <stringProp name="51663">450</stringProp>
             <stringProp name="48">0</stringProp>
-            <stringProp name="49">1</stringProp>
+            <stringProp name="48">0</stringProp>
             <stringProp name="48">0</stringProp>
           </collectionProp>
         </collectionProp>
