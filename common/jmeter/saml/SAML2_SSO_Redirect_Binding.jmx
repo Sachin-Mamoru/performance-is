@@ -115,12 +115,19 @@
       <hashTree/>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="jp@gc - Ultimate Thread Group" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="1961317478">
+          <collectionProp name="-1746088959">
             <stringProp name="52469">500</stringProp>
             <stringProp name="48">0</stringProp>
-            <stringProp name="48687">120</stringProp>
-            <stringProp name="56313">900</stringProp>
-            <stringProp name="48687">120</stringProp>
+            <stringProp name="1989496920">${rampUpPeriod}</stringProp>
+            <stringProp name="1222144217">${time}</stringProp>
+            <stringProp name="48">0</stringProp>
+          </collectionProp>
+          <collectionProp name="764222127">
+            <stringProp name="1626587">5000</stringProp>
+            <stringProp name="1597036885">(${time}/2)</stringProp>
+            <stringProp name="48">0</stringProp>
+            <stringProp name="49">1</stringProp>
+            <stringProp name="48">0</stringProp>
           </collectionProp>
         </collectionProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -379,11 +386,6 @@ ${password}
 </stringProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <GaussianRandomTimer guiclass="GaussianRandomTimerGui" testclass="GaussianRandomTimer" testname="Gaussian Random Timer" enabled="true">
-            <stringProp name="ConstantTimer.delay">6000</stringProp>
-            <stringProp name="RandomTimer.range">2000</stringProp>
-          </GaussianRandomTimer>
-          <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="HTTP 200" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="103171775">HTTP/1.1 200</stringProp>
