@@ -122,8 +122,8 @@
             <stringProp name="56313">900</stringProp>
             <stringProp name="48687">120</stringProp>
           </collectionProp>
-          <collectionProp name="697036924">
-            <stringProp name="1626587">5000</stringProp>
+          <collectionProp name="1691585737">
+            <stringProp name="1537214">2000</stringProp>
             <stringProp name="51663">450</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="48">0</stringProp>
@@ -314,16 +314,6 @@ if (y == 0) {
             <stringProp name="RegexExtractor.match_number">1</stringProp>
             <stringProp name="TestPlan.comments">.*sessionDataKey=(.*?)&amp;
 sessionDataKey=([a-z0-9-]+)\&amp;?</stringProp>
-            <stringProp name="Sample.scope">all</stringProp>
-          </RegexExtractor>
-          <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Redirect URL Extractor" enabled="true">
-            <stringProp name="RegexExtractor.useHeaders">true</stringProp>
-            <stringProp name="RegexExtractor.refname">redirectURL</stringProp>
-            <stringProp name="RegexExtractor.regex">Location:\s*(.*)</stringProp>
-            <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default">NF</stringProp>
-            <stringProp name="RegexExtractor.match_number">1</stringProp>
             <stringProp name="Sample.scope">all</stringProp>
           </RegexExtractor>
           <hashTree/>
