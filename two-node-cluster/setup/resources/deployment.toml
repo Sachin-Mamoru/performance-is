@@ -44,8 +44,8 @@ password = "wso2carbon"
 maxActive = "400"
 
 [transport.https.properties]
-maxThreads = "400"
-acceptCount = "400"
+maxThreads = "500"
+acceptCount = "500"
 
 [clustering]
 #membership_scheme = true
