@@ -54,6 +54,9 @@ maxActive = "400"
 maxThreads = "400"
 acceptCount = "400"
 
+[authentication.consent]
+prompt = true
+
 [admin_service]
 wsdl.enable=false
 

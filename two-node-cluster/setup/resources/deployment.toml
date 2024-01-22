@@ -47,6 +47,9 @@ maxActive = "400"
 maxThreads = "400"
 acceptCount = "400"
 
+[authentication.consent]
+prompt = true
+
 [clustering]
 #membership_scheme = true
 #domain = "is590.qa.com"
