@@ -26,24 +26,24 @@
 #    [skip]=false
 #    [modes]="FULL PUBLISH"
 #)
-#declare -A test_scenario1=(
-#    [name]="01-oidc_auth_code_redirect_with_consent"
-#    [display_name]="OIDC Auth Code Grant Redirect With Consent"
-#    [description]="Obtain an access token and an id token using the OAuth 2.0 authorization code grant type."
-#    [jmx]="oidc/OIDC_AuthCode_Redirect_WithConsent.jmx"
-#    [tenantMode]=false
-#    [skip]=false
-#    [modes]="FULL QUICK PUBLISH"
-#)
-declare -A test_scenario2=(
-    [name]="02-oidc_password_grant"
-    [display_name]="OIDC Password Grant Type"
-    [description]="Obtain an access token and an id token using the OAuth 2.0 password grant type."
-    [jmx]="oidc/OIDC_Password_Grant.jmx"
+declare -A test_scenario1=(
+    [name]="01-oidc_auth_code_redirect_with_consent"
+    [display_name]="OIDC Auth Code Grant Redirect With Consent"
+    [description]="Obtain an access token and an id token using the OAuth 2.0 authorization code grant type."
+    [jmx]="oidc/OIDC_AuthCode_Redirect_WithConsent.jmx"
     [tenantMode]=false
     [skip]=false
     [modes]="FULL QUICK PUBLISH"
 )
+#declare -A test_scenario2=(
+#    [name]="02-oidc_password_grant"
+#    [display_name]="OIDC Password Grant Type"
+#    [description]="Obtain an access token and an id token using the OAuth 2.0 password grant type."
+#    [jmx]="oidc/OIDC_Password_Grant.jmx"
+#    [tenantMode]=false
+#    [skip]=false
+#    [modes]="FULL QUICK PUBLISH"
+#)
 #declare -A test_scenario3=(
 #    [name]="03-saml2_sso_redirect_binding"
 #    [display_name]="SAML2 SSO Redirect Binding"
