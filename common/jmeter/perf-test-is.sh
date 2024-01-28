@@ -421,7 +421,7 @@ function run_test_data_scripts() {
 
     for script in "${scripts[@]}"; do
         script_file="$setup_dir/$script"
-        command="jmeter -Jhost=$lb_host -Jport=$is_port -JtokenIssuer=$token_issuer -JjwtTokenUserPassword=$jwt_token_user_password -JjwtTokenClientSecret=$jwt_token_client_secret -JnoOfNodes=$noOfNodes -n -t $script_file"
+        command="jmeter -Jhost=$lb_host -Jport=$is_port -JtokenIssuer=$token_issuer -JjwtTokenUserPassword=$jwt_token_user_password -JjwtTokenClientSecret=$jwt_token_client_secret -JnoOfNodes=$noOfNodes -Jdeployment=$deployment -n -t $script_file"
         echo "$command"
         echo ""
         $command
