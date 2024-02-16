@@ -424,10 +424,6 @@ echo "$setup_bastion_node_command"
 $setup_bastion_node_command || echo "Remote ssh command failed."
 
 echo ""
-echo "Sleep for FD Limit"
-sleep 30m
-
-echo ""
 echo "Creating databases in RDS..."
 echo "============================================"
 create_db_command="ssh -i $key_file -o "StrictHostKeyChecking=no" -t ubuntu@$bastion_node_ip mysql -h $rds_host \
