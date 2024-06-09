@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
   <hashTree>
-    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="OIDC- Authorization Code Redirect With Consent" enabled="true">
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="OAuth2- Authorization Code Redirect With Consent" enabled="true">
       <stringProp name="TestPlan.comments">Login to </stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
@@ -99,14 +99,14 @@
             <stringProp name="Argument.desc">samples per minute.</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="noOfTenants" elementType="Argument">
-            <stringProp name="Argument.name">noOfTenants</stringProp>
-            <stringProp name="Argument.value">${__P(noOfTenants,100)}</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="tenantMode" elementType="Argument">
             <stringProp name="Argument.name">tenantMode</stringProp>
             <stringProp name="Argument.value">${__P(tenantMode,false)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="noOfTenants" elementType="Argument">
+            <stringProp name="Argument.name">noOfTenants</stringProp>
+            <stringProp name="Argument.value">${__P(noOfTenants,100)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="deployment" elementType="Argument">
@@ -152,15 +152,6 @@
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
         <hashTree/>
-        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random_sp_count" enabled="true">
-          <stringProp name="maximumValue">${noOfSPs}</stringProp>
-          <stringProp name="minimumValue">1</stringProp>
-          <stringProp name="outputFormat"></stringProp>
-          <boolProp name="perThread">true</boolProp>
-          <stringProp name="randomSeed"></stringProp>
-          <stringProp name="variableName">sp_count_id_random</stringProp>
-        </RandomVariableConfig>
-        <hashTree/>
         <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random_user_count" enabled="true">
           <stringProp name="maximumValue">${noOfUsers}</stringProp>
           <stringProp name="minimumValue">1</stringProp>
@@ -168,6 +159,15 @@
           <boolProp name="perThread">true</boolProp>
           <stringProp name="randomSeed"></stringProp>
           <stringProp name="variableName">user_count_id</stringProp>
+        </RandomVariableConfig>
+        <hashTree/>
+        <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random_sp_count" enabled="true">
+          <stringProp name="maximumValue">${noOfSPs}</stringProp>
+          <stringProp name="minimumValue">1</stringProp>
+          <stringProp name="outputFormat"></stringProp>
+          <boolProp name="perThread">true</boolProp>
+          <stringProp name="randomSeed"></stringProp>
+          <stringProp name="variableName">sp_count_id_random</stringProp>
         </RandomVariableConfig>
         <hashTree/>
         <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
@@ -204,6 +204,8 @@ username = &quot;${usernamePrefix}${user_count_id}&quot;;
 client_secret = &quot;${consumerSecretPrefix}${sp_count_id}&quot;;
 client_id = &quot;${consumerKeyPrefix}${sp_count_id}&quot;;
 redirect_uri = &quot;${callback_url_prefix}${sp_count_id}&quot;;
+vars.put(&quot;tokenEndpoint&quot;,new String(tokenEndpoint));
+vars.put(&quot;authEndpoint&quot;,new String(authEndpoint));
 
 }
 
@@ -213,6 +215,7 @@ vars.put(&quot;client_id&quot;, new String(client_id));
 vars.put(&quot;redirect_uri&quot;,new String(redirect_uri));
 vars.put(&quot;tokenEndpoint&quot;,new String(tokenEndpoint));
 vars.put(&quot;authEndpoint&quot;,new String(authEndpoint));
+
 </stringProp>
         </BeanShellPreProcessor>
         <hashTree/>
@@ -246,7 +249,7 @@ if (y == 0 || deploymentType == &quot;active-passive&quot;) {
           </collectionProp>
         </HeaderManager>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Send request to authorize end point" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Send request to authorize end poiont" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="client_id" elementType="HTTPArgument">
@@ -308,7 +311,7 @@ if (y == 0 || deploymentType == &quot;active-passive&quot;) {
             <stringProp name="Assertion.custom_message">Test failed - authorize end poiont</stringProp>
           </ResponseAssertion>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regex Extractor - sessionDataKey" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">true</stringProp>
             <stringProp name="RegexExtractor.refname">sessionDataKey</stringProp>
             <stringProp name="RegexExtractor.regex">sessionDataKey=(.+?)&amp;</stringProp>
@@ -380,7 +383,7 @@ if (y == 0 || deploymentType == &quot;active-passive&quot;) {
             <stringProp name="Assertion.custom_message">Test failed - common auth login</stringProp>
           </ResponseAssertion>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regex Extractor - sessionDataKey" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">true</stringProp>
             <stringProp name="RegexExtractor.refname">sessionDataKey</stringProp>
             <stringProp name="RegexExtractor.regex">sessionDataKey=(.+.?)</stringProp>
@@ -390,7 +393,7 @@ if (y == 0 || deploymentType == &quot;active-passive&quot;) {
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Authorize call" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Authorize Request" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -408,9 +411,7 @@ if (y == 0 || deploymentType == &quot;active-passive&quot;) {
           <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
           <stringProp name="HTTPSampler.connect_timeout"></stringProp>
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
-          <stringProp name="TestPlan.comments">${usernamePrefix}${user_count_id}
-
-${password}</stringProp>
+          <stringProp name="TestPlan.comments">${usernamePrefix}${user_count_id}${password}</stringProp>
         </HTTPSamplerProxy>
         <hashTree>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="HTTP/1.1 302 Response Assertion" enabled="true">
@@ -423,38 +424,22 @@ ${password}</stringProp>
             <stringProp name="Assertion.custom_message">Test failed - common auth redirect</stringProp>
           </ResponseAssertion>
           <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - sessionDataKeyConsent" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="94834672">code=</stringProp>
-              <stringProp name="-987654302">sessionDataKeyConsent=</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
-            <boolProp name="Assertion.assume_success">true</boolProp>
-            <intProp name="Assertion.test_type">34</intProp>
-            <stringProp name="Assertion.custom_message">Test failed - get code</stringProp>
-          </ResponseAssertion>
-          <hashTree/>
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regex Extractor - sessionDataKeyConsent" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">true</stringProp>
             <stringProp name="RegexExtractor.refname">sessionDataKeyConsent</stringProp>
-            <stringProp name="RegexExtractor.regex">sessionDataKeyConsent=([a-z0-9-]+)\&amp;?</stringProp>
+            <stringProp name="RegexExtractor.regex">sessionDataKeyConsent=(.+?)&amp;</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default"></stringProp>
+            <stringProp name="RegexExtractor.default">FALSE</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
-            <stringProp name="TestPlan.comments">sessionDataKeyConsent=([a-z0-9-]+)\&amp;?</stringProp>
-            <stringProp name="Sample.scope">all</stringProp>
-            <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
           </RegexExtractor>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regex Extractor - Code" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regex Extractor - code" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">true</stringProp>
             <stringProp name="RegexExtractor.refname">code</stringProp>
-            <stringProp name="RegexExtractor.regex">code=([a-z0-9-]+)\&amp;?</stringProp>
+            <stringProp name="RegexExtractor.regex">code=(.+?)&amp;</stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
             <stringProp name="RegexExtractor.default"></stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
-            <stringProp name="TestPlan.comments">code=([a-z0-9-]+)\&amp;?</stringProp>
-            <stringProp name="Sample.scope">all</stringProp>
             <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
           </RegexExtractor>
           <hashTree/>
@@ -464,7 +449,7 @@ ${password}</stringProp>
           <boolProp name="IfController.evaluateAll">false</boolProp>
         </IfController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Send Consent Approve Request" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Consent Approve Request" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="sessionDataKeyConsent" elementType="HTTPArgument">
@@ -494,7 +479,7 @@ ${password}</stringProp>
             <stringProp name="HTTPSampler.port">${is_port}</stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/oauth2/authorize</stringProp>
+            <stringProp name="HTTPSampler.path">oauth2/authorize</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -513,21 +498,23 @@ ${password}</stringProp>
               <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
               <boolProp name="Assertion.assume_success">false</boolProp>
               <intProp name="Assertion.test_type">2</intProp>
-              <stringProp name="Assertion.custom_message">Test failed - authorize end poiont</stringProp>
+              <stringProp name="Assertion.custom_message">Test failed - common auth redirect</stringProp>
             </ResponseAssertion>
             <hashTree/>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regex Extractor - code" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">true</stringProp>
               <stringProp name="RegexExtractor.refname">code</stringProp>
-              <stringProp name="RegexExtractor.regex">code=(.+?)&amp;</stringProp>
+              <stringProp name="RegexExtractor.regex">code=([a-z0-9-]+)\&amp;?</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">FALSE</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
+              <stringProp name="TestPlan.comments">code=([a-z0-9-]+)\&amp;?</stringProp>
+              <stringProp name="Sample.scope">all</stringProp>
             </RegexExtractor>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get tokens" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get access token" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="client_secret" elementType="HTTPArgument">
@@ -640,18 +627,14 @@ ${password}</stringProp>
             <responseData>false</responseData>
             <samplerData>false</samplerData>
             <xml>false</xml>
-            <fieldNames>true</fieldNames>
+            <fieldNames>false</fieldNames>
             <responseHeaders>false</responseHeaders>
             <requestHeaders>false</requestHeaders>
             <responseDataOnError>false</responseDataOnError>
-            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
             <assertionsResultsToSave>0</assertionsResultsToSave>
             <bytes>true</bytes>
-            <sentBytes>true</sentBytes>
-            <url>true</url>
             <threadCounts>true</threadCounts>
-            <idleTime>true</idleTime>
-            <connectTime>true</connectTime>
           </value>
         </objProp>
         <stringProp name="filename"></stringProp>
