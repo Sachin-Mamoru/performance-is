@@ -136,7 +136,7 @@ int x = Integer.parseInt(vars.get(&quot;sp_count_id&quot;));
 int y = x - (x/numOfNodes)*numOfNodes;
 
 if (y == 0 || &quot;active-passive&quot;.equals(deploymentType)) {
-    vars.put(&quot;serverNode&quot;, &quot;node1&quot;);
+	vars.put(&quot;serverNode&quot;, &quot;node1&quot;);
 } else if (y == 1) {
     vars.put(&quot;serverNode&quot;, &quot;node2&quot;);
 } else if (y == 2) {
@@ -241,12 +241,11 @@ if (y == 0 || &quot;active-passive&quot;.equals(deploymentType)) {
             &lt;xsd1:OAuthVersion&gt;OAuth-2.0&lt;/xsd1:OAuthVersion&gt;&#xd;
             &lt;xsd1:applicationName&gt;${spNamePrefix}${sp_count_id}&lt;/xsd1:applicationName&gt;&#xd;
             &lt;xsd1:callbackUrl&gt;${callbackUrlPrefix}${sp_count_id}&lt;/xsd1:callbackUrl&gt;&#xd;
-            &lt;xsd1:grantTypes&gt;authorization_code implicit password client_credentials refresh_token urn:ietf:params:oauth:grant-type:token-exchange urn:ietf:params:oauth:grant-type:saml2-bearer urn:ietf:params:oauth:grant-type:jwt-bearer iwa:ntlm&lt;/xsd1:grantTypes&gt;&#xd;
+            &lt;xsd1:grantTypes&gt;authorization_code implicit password client_credentials refresh_token urn:ietf:params:oauth:grant-type:saml2-bearer iwa:ntlm&lt;/xsd1:grantTypes&gt;&#xd;
             &lt;xsd1:oauthConsumerKey&gt;${consumerKeyPrefix}${sp_count_id}&lt;/xsd1:oauthConsumerKey&gt;&#xd;
             &lt;xsd1:oauthConsumerSecret&gt;${consumerSecretPrefix}${sp_count_id}&lt;/xsd1:oauthConsumerSecret&gt;&#xd;
             &lt;xsd1:pkceMandatory&gt;false&lt;/xsd1:pkceMandatory&gt;&#xd;
             &lt;xsd1:pkceSupportPlain&gt;true&lt;/xsd1:pkceSupportPlain&gt;&#xd;
-            &lt;xsd1:tokenType&gt;${tokenIssuer}&lt;/xsd1:tokenType&gt;&#xd;
          &lt;/xsd:application&gt;&#xd;
       &lt;/xsd:registerOAuthApplicationData&gt;&#xd;
    &lt;/soapenv:Body&gt;&#xd;
