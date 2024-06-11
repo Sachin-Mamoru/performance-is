@@ -477,7 +477,7 @@ Resources:
       BlockDeviceMappings:
         - DeviceName: /dev/sda1
           Ebs:
-            VolumeSize: '20'
+            VolumeSize: '40'
             VolumeType: gp2
             DeleteOnTermination: 'true'
       KeyName: !Ref KeyPairName
