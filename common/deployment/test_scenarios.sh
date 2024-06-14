@@ -17,51 +17,51 @@
 # Run Ballerina Performance Tests
 # ----------------------------------------------------------------------------
 
-declare -A test_scenario0=(
-    [name]="00-authenticate_super_tenant_users"
-    [display_name]="Authenticate Super Tenant User"
-    [description]="Select random super tenant users and authenticate through the RemoteUserStoreManagerService."
-    [jmx]="authenticate/Authenticate_Super_Tenant_User.jmx"
-    [tenantMode]=false
-    [skip]=false
-    [modes]="FULL QUICK"
-)
-declare -A test_scenario1=(
-    [name]="01-oauth_auth_code_redirect_with_consent"
-    [display_name]="Auth Code Grant Redirect With Consent"
-    [description]="Obtain an access token using the OAuth 2.0 authorization code grant type."
-    [jmx]="oauth/OAuth_AuthCode_Redirect_WithConsent.jmx"
-    [tenantMode]=false
-    [skip]=false
-    [modes]="FULL"
-)
-declare -A test_scenario2=(
-    [name]="02-oauth_implicit_redirect_with_consent"
-    [display_name]="Implicit Grant Redirect With Consent"
-    [description]="Obtain an access token using the OAuth 2.0 implicit grant type."
-    [jmx]="oauth/OAuth_Implicit_Redirect_WithConsent.jmx"
-    [tenantMode]=false
-    [skip]=false
-    [modes]="FULL"
-)
-# declare -A test_scenario3=(
-#     [name]="03-oauth_password_grant"
-#     [display_name]="Password Grant Type"
-#     [description]="Obtain an access token using the OAuth 2.0 password grant type."
-#     [jmx]="oauth/OAuth_Password_Grant.jmx"
+# declare -A test_scenario0=(
+#     [name]="00-authenticate_super_tenant_users"
+#     [display_name]="Authenticate Super Tenant User"
+#     [description]="Select random super tenant users and authenticate through the RemoteUserStoreManagerService."
+#     [jmx]="authenticate/Authenticate_Super_Tenant_User.jmx"
+#     [tenantMode]=false
+#     [skip]=false
+#     [modes]="FULL QUICK"
+# )
+# declare -A test_scenario1=(
+#     [name]="01-oauth_auth_code_redirect_with_consent"
+#     [display_name]="Auth Code Grant Redirect With Consent"
+#     [description]="Obtain an access token using the OAuth 2.0 authorization code grant type."
+#     [jmx]="oauth/OAuth_AuthCode_Redirect_WithConsent.jmx"
 #     [tenantMode]=false
 #     [skip]=false
 #     [modes]="FULL"
 # )
-# declare -A test_scenario4=(
-#     [name]="04-oauth_client_credential_grant"
-#     [display_name]="Client Credentials Grant Type"
-#     [description]="Obtain an access token using the OAuth 2.0 client credential grant type."
-#     [jmx]="oauth/OAuth_Client_Credentials_Grant.jmx"
+# declare -A test_scenario2=(
+#     [name]="02-oauth_implicit_redirect_with_consent"
+#     [display_name]="Implicit Grant Redirect With Consent"
+#     [description]="Obtain an access token using the OAuth 2.0 implicit grant type."
+#     [jmx]="oauth/OAuth_Implicit_Redirect_WithConsent.jmx"
 #     [tenantMode]=false
 #     [skip]=false
 #     [modes]="FULL"
 # )
+declare -A test_scenario3=(
+    [name]="03-oauth_password_grant"
+    [display_name]="Password Grant Type"
+    [description]="Obtain an access token using the OAuth 2.0 password grant type."
+    [jmx]="oauth/OAuth_Password_Grant.jmx"
+    [tenantMode]=false
+    [skip]=false
+    [modes]="FULL"
+)
+declare -A test_scenario4=(
+    [name]="04-oauth_client_credential_grant"
+    [display_name]="Client Credentials Grant Type"
+    [description]="Obtain an access token using the OAuth 2.0 client credential grant type."
+    [jmx]="oauth/OAuth_Client_Credentials_Grant.jmx"
+    [tenantMode]=false
+    [skip]=false
+    [modes]="FULL"
+)
 # declare -A test_scenario5=(
 #     [name]="05-oidc_auth_code_redirect_with_consent"
 #     [display_name]="OIDC Auth Code Grant Redirect With Consent"
