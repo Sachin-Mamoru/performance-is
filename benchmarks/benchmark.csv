@@ -4,22 +4,3 @@ OIDC Auth Code Grant Redirect With Consent,4G,50,2 Common Auth Login HTTP Reques
 OIDC Auth Code Grant Redirect With Consent,4G,50,3 Authorize call,3682,0,0,6.14,8.65,2.53,5,78,11,12,13,13,14,22,2.47,2.89,,,,,,,,,,,,,0.02,1.12,10.63,0.09,7.81,66.88,0.00,0.08,0.70
 OIDC Auth Code Grant Redirect With Consent,4G,50,4 Send Consent Approve Request,3683,0,0,6.14,13.84,3.31,10,102,16,18,18,19,20,59,3.06,3.58,,,,,,,,,,,,,0.02,1.12,10.63,0.09,7.81,66.88,0.00,0.08,0.70
 OIDC Auth Code Grant Redirect With Consent,4G,50,5 Get tokens,3684,0,0,6.14,34.44,4.19,27,116,36,39,41,42,43,87,16.49,4.18,,,,,,,,,,,,,0.02,1.12,10.63,0.09,7.81,66.88,0.00,0.08,0.70
-OIDC Auth Code Grant Redirect With Consent,4G,100,1 Send request to authorize end point,7394,0,0,12.33,9.1,2.59,6,56,11,13,13,14,14,39,10.9,3.27,,,,,,,,,,,,,0.36,0.30,3.31,0.14,0.42,19.77,0.02,0.06,0.24
-OIDC Auth Code Grant Redirect With Consent,4G,100,2 Common Auth Login HTTP Request,7384,0,0,12.31,51.23,7.48,42,138,52,58,66,73,78,124,12.01,5.17,,,,,,,,,,,,,0.36,0.30,3.31,0.14,0.42,19.77,0.02,0.06,0.24
-OIDC Auth Code Grant Redirect With Consent,4G,100,3 Authorize call,7383,0,0,12.31,8.24,2.21,5,24,10,12,12,13,13,23,4.96,5.79,,,,,,,,,,,,,0.36,0.30,3.31,0.14,0.42,19.77,0.02,0.06,0.24
-OIDC Auth Code Grant Redirect With Consent,4G,100,4 Send Consent Approve Request,7393,0,0,12.33,13.35,2.72,10,80,15,17,18,18,20,35,6.15,7.18,,,,,,,,,,,,,0.36,0.30,3.31,0.14,0.42,19.77,0.02,0.06,0.24
-OIDC Auth Code Grant Redirect With Consent,4G,100,5 Get tokens,7393,0,0,12.32,33.83,3.42,27,114,36,38,39,41,42,72,33.07,8.38,,,,,,,,,,,,,0.36,0.30,3.31,0.14,0.42,19.77,0.02,0.06,0.24
-OIDC Auth Code Grant Redirect With Consent,4G,150,1 Send request to authorize end point,11029,0,0,18.39,8.84,2.96,5,77,11,12,13,13,14,47,16.25,4.88,,,,,,,,,,,,,0.39,0.41,1.36,0.35,0.39,6.49,0.06,0.10,0.13
-OIDC Auth Code Grant Redirect With Consent,4G,150,2 Common Auth Login HTTP Request,11023,0,0,18.38,51.63,8.85,42,138,52,63,69,76,84,124,17.92,7.71,,,,,,,,,,,,,0.39,0.41,1.36,0.35,0.39,6.49,0.06,0.10,0.13
-OIDC Auth Code Grant Redirect With Consent,4G,150,3 Authorize call,11026,0,0,18.38,8.13,2.77,5,73,10,12,12,13,13,26,7.41,8.65,,,,,,,,,,,,,0.39,0.41,1.36,0.35,0.39,6.49,0.06,0.10,0.13
-OIDC Auth Code Grant Redirect With Consent,4G,150,4 Send Consent Approve Request,11027,0,0,18.38,13.28,3.33,9,73,15,17,17,18,20,64,9.17,10.72,,,,,,,,,,,,,0.39,0.41,1.36,0.35,0.39,6.49,0.06,0.10,0.13
-OIDC Auth Code Grant Redirect With Consent,4G,150,5 Get tokens,11029,0,0,18.39,34.01,3.38,28,93,36,38,39,41,42,85,49.33,12.51,,,,,,,,,,,,,0.39,0.41,1.36,0.35,0.39,6.49,0.06,0.10,0.13
-OIDC Auth Code Grant Redirect With Consent,4G,300,1 Send request to authorize end point,22001,0,0,36.68,8.83,3.91,5,91,11,12,13,14,16,71,32.42,9.73,,,,,,,,,,,,,0.45,0.63,0.92,0.99,0.97,2.57,0.37,0.34,0.25
-OIDC Auth Code Grant Redirect With Consent,4G,300,2 Common Auth Login HTTP Request,21994,0,0,36.67,58.2,15.21,43,270,63,74,82,99,124,192,35.77,15.39,,,,,,,,,,,,,0.45,0.63,0.92,0.99,0.97,2.57,0.37,0.34,0.25
-OIDC Auth Code Grant Redirect With Consent,4G,300,3 Authorize call,21996,0,0,36.67,8.01,3.16,5,97,10,11,12,13,15,38,14.78,17.26,,,,,,,,,,,,,0.45,0.63,0.92,0.99,0.97,2.57,0.37,0.34,0.25
-OIDC Auth Code Grant Redirect With Consent,4G,300,4 Send Consent Approve Request,22000,0,0,36.68,13.24,4.61,9,101,15,17,17,20,24,79,18.29,21.38,,,,,,,,,,,,,0.45,0.63,0.92,0.99,0.97,2.57,0.37,0.34,0.25
-OIDC Auth Code Grant Redirect With Consent,4G,300,5 Get tokens,22001,0,0,36.67,34.29,5.59,27,131,36,38,40,44,49,108,98.4,24.95,,,,,,,,,,,,,0.45,0.63,0.92,0.99,0.97,2.57,0.37,0.34,0.25
-OIDC Auth Code Grant Redirect With Consent,4G,500,1 Send request to authorize end point,36827,0,0,61.4,9.24,5.42,5,243,11,13,14,17,25,76,54.28,16.29,,,,,,,,,,,,,1.93,2.15,1.74,1.92,2.07,2.16,0.60,0.62,0.52
-OIDC Auth Code Grant Redirect With Consent,4G,500,2 Common Auth Login HTTP Request,36843,0,0,61.42,69.77,26.87,41,346,77,99,121,153,178,269,59.9,25.78,,,,,,,,,,,,,1.93,2.15,1.74,1.92,2.07,2.16,0.60,0.62,0.52
-OIDC Auth Code Grant Redirect With Consent,4G,500,3 Authorize call,36839,0,0,61.42,8.3,4.14,5,141,10,12,13,15,18,70,24.76,28.9,,,,,,,,,,,,,1.93,2.15,1.74,1.92,2.07,2.16,0.60,0.62,0.52
-OIDC Auth Code Grant Redirect With Consent,4G,500,4 Send Consent Approve Request,36823,0,0,61.39,14.09,7.83,8,249,16,18,20,27,48,97,30.61,35.78,,,,,,,,,,,,,1.93,2.15,1.74,1.92,2.07,2.16,0.60,0.62,0.52
