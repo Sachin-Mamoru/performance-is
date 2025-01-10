@@ -1,0 +1,111 @@
+Scenario Name,Concurrent Users,Label,# Samples,Throughput (Requests/sec),Average Response Time (ms),Minimum Response Time (ms),Maximum Response Time (ms),95th Percentile of Response Time (ms),# Samples % Difference,Throughput (Requests/sec) % Difference,Average Response Time (ms) % Difference,Minimum Response Time (ms) % Difference,Maximum Response Time (ms) % Difference,95th Percentile of Response Time (ms) % Difference
+Client Credentials Grant Type,50,1 Get Token Client Credential Grant,257641,551.62,90.45,6,271,94,-2.69,2.77,-2.73,0,0,0
+Client Credentials Grant Type,100,1 Get Token Client Credential Grant,243379,556.7,179.48,6,610,204,-8.93,9.82,-8.96,0,0,0
+Client Credentials Grant Type,150,1 Get Token Client Credential Grant,205889,514.01,291.58,6,994,321,-16.59,19.88,-16.59,0,0,0
+Client Credentials Grant Type,300,1 Get Token Client Credential Grant,245309,525.49,569.51,6,1903,683,-2.82,2.92,-2.89,0,0,0
+Client Credentials Grant Type,500,1 Get Token Client Credential Grant,239716,474.96,1048.2,6,3104,1159,4.95,-4.71,4.86,0,0,0
+OIDC Auth Code Grant Redirect With Consent,50,1 Send request to authorize end point,38536,79.98,92.75,6,82,14,0.4,-0.39,6.23,0,0,0
+OIDC Auth Code Grant Redirect With Consent,50,2 Common Auth Login HTTP Request,38538,79.98,162.18,40,157,62,0.39,-0.39,-6.54,0,0,0
+OIDC Auth Code Grant Redirect With Consent,50,3 Authorize call,38539,79.97,101.37,4,65,12,0.41,-0.4,3.66,0,44.44,0
+OIDC Auth Code Grant Redirect With Consent,50,4 Send Consent Approve Request,38540,79.97,162.62,7,91,15,0.41,-0.41,-0.5,0,0,0
+OIDC Auth Code Grant Redirect With Consent,50,5 Get tokens,38540,79.98,103.23,15,89,26,0.4,-0.39,5.5,0,0,0
+OIDC Auth Code Grant Redirect With Consent,100,1 Send request to authorize end point,38382,76.29,215.77,6,83,14,4.81,-4.58,10,0,0,0
+OIDC Auth Code Grant Redirect With Consent,100,2 Common Auth Login HTTP Request,38378,76.26,330.42,37,162,68,4.82,-4.59,-0.86,0,0,100
+OIDC Auth Code Grant Redirect With Consent,100,3 Authorize call,38386,76.27,211.84,4,48,11,4.83,-4.61,7.01,0,0,0
+OIDC Auth Code Grant Redirect With Consent,100,4 Send Consent Approve Request,38386,76.25,320.52,6,103,15,4.86,-4.63,2.99,0,0,0
+OIDC Auth Code Grant Redirect With Consent,100,5 Get tokens,38381,76.3,228.35,15,115,26,4.79,-4.55,9.05,0,0,0
+OIDC Auth Code Grant Redirect With Consent,150,1 Send request to authorize end point,35485,70.05,352.43,6,69,14,5.47,-5.22,4.76,0,60.47,0
+OIDC Auth Code Grant Redirect With Consent,150,2 Common Auth Login HTTP Request,35487,70.08,535.21,36,159,67,5.44,-5.16,2.87,0,0,0
+OIDC Auth Code Grant Redirect With Consent,150,3 Authorize call,35485,70.1,342.75,4,71,11,5.4,-5.13,3.1,0,0,0
+OIDC Auth Code Grant Redirect With Consent,150,4 Send Consent Approve Request,35486,70.06,532.71,6,72,15,5.45,-5.18,9.07,0,0,0
+OIDC Auth Code Grant Redirect With Consent,150,5 Get tokens,35485,70.04,371.5,15,97,27,5.5,-5.22,6.77,0,125.58,0
+OIDC Auth Code Grant Redirect With Consent,300,1 Send request to authorize end point,35301,67.69,752.67,6,108,14,8.51,-7.87,9.03,0,0,0
+OIDC Auth Code Grant Redirect With Consent,300,2 Common Auth Login HTTP Request,35292,67.66,1093.53,39,277,79,8.5,-7.88,6.79,0,0,0
+OIDC Auth Code Grant Redirect With Consent,300,3 Authorize call,35302,67.64,742.83,4,145,11,8.57,-7.94,8.69,0,0,0
+OIDC Auth Code Grant Redirect With Consent,300,4 Send Consent Approve Request,35312,67.64,1044.42,6,94,15,8.61,-7.95,9.21,0,0,0
+OIDC Auth Code Grant Redirect With Consent,300,5 Get tokens,35297,67.75,786.82,16,170,29,8.4,-7.79,9.69,0,0,0
+OIDC Auth Code Grant Redirect With Consent,500,1 Send request to authorize end point,31335,64.87,1339.42,6,109,16,0.43,-0.29,-3.62,0,153.49,0
+OIDC Auth Code Grant Redirect With Consent,500,2 Common Auth Login HTTP Request,31361,64.88,1871.52,40,629,151,0.46,-0.34,5.87,0,0,0
+OIDC Auth Code Grant Redirect With Consent,500,3 Authorize call,31362,64.85,1315.3,4,124,12,0.53,-0.41,-2.82,0,0,0
+OIDC Auth Code Grant Redirect With Consent,500,4 Send Consent Approve Request,31332,64.97,1749.39,6,102,17,0.22,-0.11,1.18,0,0,-60.47
+OIDC Auth Code Grant Redirect With Consent,500,5 Get tokens,31334,64.96,1383.62,15,140,36,0.26,-0.14,-1.03,0,0,0
+OIDC Auth Code Grant Redirect Without Consent,50,1 Send request to authorize end point,50396,106.44,163.62,13,93,20,-1.42,1.45,-7.47,0,0,-53.49
+OIDC Auth Code Grant Redirect Without Consent,50,2 Common Auth Login HTTP Request,50389,106.43,103.46,37,132,62,-1.42,1.43,2.7,0,0,0
+OIDC Auth Code Grant Redirect Without Consent,50,3 Authorize call,50394,106.43,93.5,8,66,15,-1.42,1.43,0.92,0,57.14,0
+OIDC Auth Code Grant Redirect Without Consent,50,4 Get tokens,50395,106.45,106.84,16,88,25,-1.43,1.45,2.45,0,0,0
+OIDC Auth Code Grant Redirect Without Consent,100,1 Send request to authorize end point,47634,103.11,324.98,12,88,20,-3.86,4.03,-7.02,0,0,0
+OIDC Auth Code Grant Redirect Without Consent,100,2 Common Auth Login HTTP Request,47637,103.12,219.53,42,151,73,-3.85,4.03,-2.84,0,0,0
+OIDC Auth Code Grant Redirect Without Consent,100,3 Authorize call,47637,103.09,197.42,7,76,15,-3.84,3.99,-3.18,0,0,0
+OIDC Auth Code Grant Redirect Without Consent,100,4 Get tokens,47631,103.11,225.66,15,102,25,-3.86,4.04,-0.64,0,0,-40.48
+OIDC Auth Code Grant Redirect Without Consent,150,1 Send request to authorize end point,48230,97.86,504.74,11,100,16,2.47,-2.46,0.06,0,0,-75.38
+OIDC Auth Code Grant Redirect Without Consent,150,2 Common Auth Login HTTP Request,48222,97.88,351.88,42,213,76,2.43,-2.42,3.77,0,0,0
+OIDC Auth Code Grant Redirect Without Consent,150,3 Authorize call,48224,97.87,315.89,7,84,11,2.46,-2.44,3.68,0,0,0
+OIDC Auth Code Grant Redirect Without Consent,150,4 Get tokens,48234,97.86,356.19,14,113,23,2.48,-2.46,3.37,0,0,0
+OIDC Auth Code Grant Redirect Without Consent,300,1 Send request to authorize end point,43737,84.29,1164.05,10,104,18,7.66,-7.17,8.8,0,60,0
+OIDC Auth Code Grant Redirect Without Consent,300,2 Common Auth Login HTTP Request,43738,84.32,813.99,45,398,121,7.63,-7.15,6.66,0,0,0
+OIDC Auth Code Grant Redirect Without Consent,300,3 Authorize call,43729,84.4,744.6,7,216,13,7.51,-7.04,7.25,0,0,0
+OIDC Auth Code Grant Redirect Without Consent,300,4 Get tokens,43722,84.32,824.2,14,116,29,7.59,-7.11,7.51,0,0,-55.38
+OIDC Auth Code Grant Redirect Without Consent,500,1 Send request to authorize end point,42698,88.11,1754.46,10,337,44,0.34,-0.37,4.41,0,0,0
+OIDC Auth Code Grant Redirect Without Consent,500,2 Common Auth Login HTTP Request,42671,88.06,1330.89,40,610,238,0.34,-0.38,-0.79,0,0,0
+OIDC Auth Code Grant Redirect Without Consent,500,3 Authorize call,42685,88.07,1225.18,7,361,19,0.37,-0.41,-2.65,0,0,0
+OIDC Auth Code Grant Redirect Without Consent,500,4 Get tokens,42692,88.03,1337.78,15,374,42,0.43,-0.46,-0.49,0,567.86,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,50,1 Send request to authorize end point,235712,494.91,100.56,11,89,15,-0.76,0.77,-0.79,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,50,2 Common Auth Login HTTP Request,223351,467.51,213.47,41,139,62,-0.49,0.48,-0.48,0,148.21,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,50,3 Authorize call,216030,470.08,318.54,7,88,11,-4.29,4.49,-4.28,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,50,4 Get tokens,209398,460.83,649.1,16,108,22,-5.38,5.74,-5.47,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,100,1 Send request to authorize end point,205084,449.85,1106.13,11,73,16,-5.22,5.48,-5.27,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,100,2 Common Auth Login HTTP Request,397611,836.99,59.22,35,169,64,-1.08,1.09,-1.2,0,0,-1.54
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,100,3 Authorize call,408226,786.19,126.7,7,90,11,8.06,-7.46,8.1,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,100,4 Get tokens,390041,851.59,175.54,15,115,23,-4.75,4.95,-4.79,0,109.09,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,150,1 Send request to authorize end point,387847,774.75,386.17,10,80,16,3.98,-3.84,3.97,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,150,2 Common Auth Login HTTP Request,408933,684.43,727.63,33,243,78,23.88,-19.28,23.8,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,150,3 Authorize call,38907,83.83,90.5,6,81,11,-3.29,3.4,2.61,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,150,4 Get tokens,38909,83.82,156.7,14,101,23,-3.27,3.39,-8.05,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,300,1 Send request to authorize end point,38901,83.82,154.01,10,109,17,-3.3,3.42,-5.21,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,300,2 Common Auth Login HTTP Request,38904,83.83,92.53,42,321,112,-3.29,3.42,-4.32,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,300,3 Authorize call,38903,83.82,99.81,7,89,13,-3.29,3.4,3.43,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,300,4 Get tokens,37779,76.07,215.66,15,113,28,3.43,-3.33,8.33,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,500,1 Send request to authorize end point,37789,76.08,330.98,11,326,31,3.45,-3.34,-2.05,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,500,2 Common Auth Login HTTP Request,37788,76.08,322.56,40,901,323,3.44,-3.34,0.74,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,500,3 Authorize call,37788,76.09,211.4,7,327,19,3.44,-3.34,6.01,0,2625,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes,500,4 Get tokens,37790,76.08,230.3,14,329,41,3.45,-3.34,8.91,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,50,1 Send request to authorize end point,36953,77.29,323.02,11,112,16,-0.43,0.38,1.98,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,50,2 Common Auth Login HTTP Request,36955,77.29,483.72,41,147,62,-0.43,0.4,-4.82,0,0,-4.62
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,50,3 Authorize call,36958,77.29,477.09,8,81,12,-0.42,0.39,0.65,0,575,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,50,4 Get tokens,36952,77.29,311.13,15,124,23,-0.43,0.38,-0.71,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,100,1 Send request to authorize end point,36958,77.33,341.06,11,87,16,-0.47,0.44,2.49,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,100,2 Common Auth Login HTTP Request,33845,70.43,714.76,47,183,79,-0.04,0.03,-2.57,0,0,276.19
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,100,3 Authorize call,33846,70.43,1054.65,7,72,12,-0.05,0.03,-0.62,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,100,4 Get tokens,33841,70.44,1019.99,15,96,23,-0.09,0.06,3.88,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,150,1 Send request to authorize end point,33834,70.47,701.87,11,79,17,-0.12,0.1,-1.93,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,150,2 Common Auth Login HTTP Request,33855,70.46,753.44,40,179,73,-0.05,0.03,-0.23,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,150,3 Authorize call,29021,66.81,1300.46,7,87,12,-9.73,10.87,-11.61,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,150,4 Get tokens,28988,66.78,1796.63,15,92,24,-9.78,10.99,-7.65,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,300,1 Send request to authorize end point,28977,66.74,1759.83,10,104,18,-9.77,10.94,-7.28,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,300,2 Common Auth Login HTTP Request,28982,66.8,1273.73,41,297,110,-9.83,11.02,-12.8,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,300,3 Authorize call,28997,66.78,1322.25,7,91,13,-9.76,10.91,-11.28,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,300,4 Get tokens,47768,98.05,162.42,15,112,29,1.42,-1.42,-5.22,0,433.33,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,500,1 Send request to authorize end point,47762,98.06,95.81,10,331,37,1.41,-1.4,10.87,0,0,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,500,2 Common Auth Login HTTP Request,47770,98.06,145.01,34,465,149,1.42,-1.41,-1.71,0,0,-29.38
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,500,3 Authorize call,47767,98.05,104.24,7,318,18,1.43,-1.42,9.46,0,50.71,0
+OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles,500,4 Get tokens,45129,92.45,332.85,15,337,40,1.56,-1.57,-1.86,0,0,0
+OIDC Password Grant Type,50,1 GetToken_Password_Grant,45129,92.44,219.48,14,462,167,1.58,-1.58,5.08,0,0,0
+OIDC Password Grant Type,100,1 GetToken_Password_Grant,45131,92.47,295.42,15,758,279,1.54,-1.54,0.1,0,0,0
+OIDC Password Grant Type,150,1 GetToken_Password_Grant,45124,92.45,230.97,14,1455,439,1.56,-1.55,5.32,0,0,0
+OIDC Password Grant Type,300,1 GetToken_Password_Grant,42944,90.79,501.2,14,2870,1039,-1.64,1.67,-3.47,0,0,0
+OIDC Password Grant Type,500,1 GetToken_Password_Grant,42926,90.81,337.12,14,6642,1783,-1.7,1.73,-0.5,0,0,0
+SAML2 SSO Redirect Binding,50,1 Initial SAML Request,42941,90.8,451.22,7,90,16,-1.66,1.69,-2.59,0,0,0
+SAML2 SSO Redirect Binding,50,2 Identity Provider Login,42947,90.82,358.43,41,156,65,-1.67,1.69,1.01,0,0,0
+SAML2 SSO Redirect Binding,100,1 Initial SAML Request,38633,80.75,1105.92,6,78,15,-0.73,0.69,-0.02,0,0,0
+SAML2 SSO Redirect Binding,100,2 Identity Provider Login,38628,80.76,767.56,45,154,71,-0.75,0.71,-2.29,0,0,0
+SAML2 SSO Redirect Binding,150,1 Initial SAML Request,38606,80.83,1034.39,6,56,15,-0.89,0.86,0.01,0,0,0
+SAML2 SSO Redirect Binding,150,2 Identity Provider Login,38626,80.81,792,44,163,81,-0.82,0.77,-1.24,0,0,0
+SAML2 SSO Redirect Binding,300,1 Initial SAML Request,36498,79.23,1874.81,6,93,16,-4.65,4.86,-4.27,0,0,0
+SAML2 SSO Redirect Binding,300,2 Identity Provider Login,36468,79.13,1350.15,43,241,93,-4.58,4.78,-4.54,0,0,0
+SAML2 SSO Redirect Binding,500,1 Initial SAML Request,36499,79.17,1661.55,6,1415,30,-4.57,4.76,-6.43,0,0,0
+SAML2 SSO Redirect Binding,500,2 Identity Provider Login,36494,79.19,1384.96,51,3081,923,-4.61,4.79,-3.85,0,0,0
+Token Exchange Grant,50,1 GetToken_Token_Exchange_Grant,160141,323.08,154.33,9,1160,190,3.27,-3.16,3.25,0,0,0
+Token Exchange Grant,100,1 GetToken_Token_Exchange_Grant,154008,326.26,305.94,8,1255,377,-1.68,1.71,-1.7,0,0,0
+Token Exchange Grant,150,1 GetToken_Token_Exchange_Grant,148802,328.41,455.86,8,2437,383,-5.65,6,-5.66,0,0,0
+Token Exchange Grant,300,1 GetToken_Token_Exchange_Grant,143173,309.45,966.37,9,2218,711,-3.8,3.92,-3.59,0,0,0
+Token Exchange Grant,500,1 GetToken_Token_Exchange_Grant,138947,303.24,1639.68,9,4551,1511,-4.89,5.16,-4.7,0,0,0
