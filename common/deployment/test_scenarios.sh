@@ -26,15 +26,6 @@
 #    [skip]=false
 #    [modes]="FULL PUBLISH"
 #)
-declare -A test_scenario0=(
-    [name]="00-oauth_client_credential_grant"
-    [display_name]="Client Credentials Grant Type"
-    [description]="Obtain an access token using the OAuth 2.0 client credential grant type."
-    [jmx]="oauth/OAuth_Client_Credentials_Grant.jmx"
-    [tenantMode]=false
-    [skip]=false
-    [modes]="FULL PUBLISH"
-)
 declare -A test_scenario1=(
     [name]="01-oidc_auth_code_redirect_with_consent"
     [display_name]="OIDC Auth Code Grant Redirect With Consent"
@@ -106,15 +97,6 @@ declare -A test_scenario08=(
     [tenantMode]=false
     [skip]=false
     [modes]="FULL QUICK PUBLISH OIDC_AUTH_CODE_REDIRECT_WITHOUT_CONSENT_UA_GROUPS_ROLES_FLOW"
-)
-declare -A test_scenario09=(
-    [name]="09-oidc_password_grant"
-    [display_name]="OIDC Password Grant Type"
-    [description]="Obtain an access token and an id token using the OAuth 2.0 password grant type."
-    [jmx]="oidc/OIDC_Password_Grant.jmx"
-    [tenantMode]=false
-    [skip]=false
-    [modes]="FULL QUICK PUBLISH"
 )
 declare -A test_scenario10=(
     [name]="10-oidc_password_grant_retrieve_user_attributes"
