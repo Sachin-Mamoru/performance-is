@@ -26,6 +26,15 @@
 #    [skip]=false
 #    [modes]="FULL PUBLISH"
 #)
+declare -A test_scenario0=(
+    [name]="00-oauth_client_credential_grant"
+    [display_name]="Client Credentials Grant Type"
+    [description]="Obtain an access token using the OAuth 2.0 client credential grant type."
+    [jmx]="oauth/OAuth_Client_Credentials_Grant.jmx"
+    [tenantMode]=false
+    [skip]=false
+    [modes]="FULL PUBLISH"
+)
 declare -A test_scenario1=(
     [name]="01-oidc_auth_code_redirect_with_consent"
     [display_name]="OIDC Auth Code Grant Redirect With Consent"
