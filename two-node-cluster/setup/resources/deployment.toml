@@ -65,14 +65,14 @@ prompt = true
 wsdl.enable=false
 
 [keystore.primary]
-file_name = "wso2carbon.jks"
+file_name = "wso2carbon.p12"
 password = "wso2carbon"
-type="JKS"
+type="PKCS12"
 
 [truststore]
-file_name="client-truststore.jks"
+file_name="client-truststore.p12"
 password="wso2carbon"
-type="JKS"
+type="PKCS12"
 
 [clustering]
 #membership_scheme = true
@@ -81,3 +81,9 @@ membership_scheme = "wka"
 local_member_host = "member_ip_1"
 localMemberPort = "4000"
 members = ["member_ip_2:4000", "member_ip_1:4000"]
+
+[account_recovery.endpoint.auth]
+hash= "66cd9688a2ae068244ea01e70f0e230f5623b7fa4cdecb65070a09ec06452262"
+
+[identity.auth_framework.endpoint]
+app_password= "dashboard"
