@@ -65,13 +65,13 @@ function exit_handler() {
     cat "$stack_events_json" | jq '.StackEvents | .[] | select ( .ResourceStatus == "CREATE_FAILED" )'
 
     local stack_delete_start_time=$(date +%s)
-    echo ""
-    echo "Deleting the stack: $stack_id"
-    aws cloudformation delete-stack --stack-name "$stack_id"
+    # echo ""
+    # echo "Deleting the stack: $stack_id"
+    # aws cloudformation delete-stack --stack-name "$stack_id"
 
-    echo ""
-    echo "Polling till the stack deletion completes..."
-    aws cloudformation wait stack-delete-complete --stack-name "$stack_id"
+    # echo ""
+    # echo "Polling till the stack deletion completes..."
+    # aws cloudformation wait stack-delete-complete --stack-name "$stack_id"
     printf "Stack deletion time: %s\n" "$(format_time $(measure_time "$stack_delete_start_time"))"
 
     printf "Script execution time: %s\n" "$(format_time $(measure_time "$script_start_time"))"
