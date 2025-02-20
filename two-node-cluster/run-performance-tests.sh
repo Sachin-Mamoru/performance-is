@@ -49,15 +49,15 @@ db_password="wso2carbon"
 #    [skip]=false
 #    [modes]="FULL"
 #)
-#declare -A test_scenario4=(
-#    [name]="04-oauth_client_credential_grant"
-#    [display_name]="Client Credentials Grant Type"
-#    [description]="Obtain an access token using the OAuth 2.0 client credential grant type."
-#    [jmx]="oauth/OAuth_Client_Credentials_Grant.jmx"
-#    [tenantMode]=false
-#    [skip]=false
-#    [modes]="FULL"
-#)
+declare -A test_scenario4=(
+   [name]="04-oauth_client_credential_grant"
+   [display_name]="Client Credentials Grant Type"
+   [description]="Obtain an access token using the OAuth 2.0 client credential grant type."
+   [jmx]="oauth/OAuth_Client_Credentials_Grant.jmx"
+   [tenantMode]=false
+   [skip]=false
+   [modes]="FULL"
+)
 declare -A test_scenario5=(
     [name]="05-oidc_auth_code_redirect_with_consent"
     [display_name]="OIDC Auth Code Grant Redirect With Consent"
@@ -76,15 +76,15 @@ declare -A test_scenario5=(
 #    [skip]=false
 #    [modes]="FULL"
 #)
-#declare -A test_scenario7=(
-#    [name]="07-oidc_password_grant"
-#    [display_name]="OIDC Password Grant Type"
-#    [description]="Obtain an access token and an id token using the OAuth 2.0 password grant type."
-#    [jmx]="oidc/OIDC_Password_Grant.jmx"
-#    [tenantMode]=false
-#    [skip]=false
-#    [modes]="FULL QUICK"
-#)
+declare -A test_scenario7=(
+   [name]="07-oidc_password_grant"
+   [display_name]="OIDC Password Grant Type"
+   [description]="Obtain an access token and an id token using the OAuth 2.0 password grant type."
+   [jmx]="oidc/OIDC_Password_Grant.jmx"
+   [tenantMode]=false
+   [skip]=false
+   [modes]="FULL QUICK"
+)
 #declare -A test_scenario9=(
 #    [name]="09-saml2_sso_redirect_binding"
 #    [display_name]="SAML2 SSO Redirect Binding"
