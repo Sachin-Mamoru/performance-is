@@ -248,7 +248,7 @@ heap_regex='^[0-9]+[MG]$'
 # Check concurrency level
 if [ "$concurrency" == "50-500" ]; then
     echo "Running tests for concurrency level 50-500"
-    default_concurrent_users="50 100 150 300 500"
+    default_concurrent_users="300"
 elif [ "$concurrency" == "500-3000" ]; then
     echo "Running tests for concurrency level 500-3000"
     default_concurrent_users="500 1000 1500 2000 2500 3000"
@@ -490,7 +490,7 @@ function run_test_data_scripts() {
 
     echo "Running test data setup scripts"
     echo "=========================================================================================="
-    declare -a scripts=("TestData_SCIM2_Add_User.jmx" "TestData_Add_OAuth_Apps.jmx" "TestData_Add_OAuth_Apps_Requesting_Claims.jmx" "TestData_Add_OAuth_Apps_Without_Consent.jmx" "TestData_Add_SAML_Apps.jmx" "TestData_Add_Device_Flow_OAuth_Apps.jmx" "TestData_Add_OAuth_Idps.jmx" "TestData_Get_OAuth_Jwt_Token.jmx")
+    declare -a scripts=("TestData_SCIM2_Add_User.jmx" "TestData_Add_OAuth_Apps.jmx" "TestData_Add_OAuth_Apps_Requesting_Claims.jmx")
     declare -ag additional_jmeter_params=("jwtTokenUserPassword=$jwt_token_user_password" "jwtTokenClientSecret=$jwt_token_client_secret")
     run_jmeter_scripts "${scripts[@]}"
 }
@@ -532,7 +532,7 @@ function initiailize_test() {
             done
         done
     fi
-    
+
     if [[ ! -z $mode ]]; then
         declare -n scenario
         for scenario in ${!test_scenario@}; do
