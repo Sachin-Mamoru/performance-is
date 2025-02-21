@@ -98,15 +98,15 @@
 #     [skip]=false
 #     [modes]="FULL QUICK PUBLISH OIDC_AUTH_CODE_REDIRECT_WITHOUT_CONSENT_UA_GROUPS_ROLES_FLOW"
 # )
-declare -A test_scenario09=(
-    [name]="09-oidc_password_grant"
-    [display_name]="OIDC Password Grant Type"
-    [description]="Obtain an access token and an id token using the OAuth 2.0 password grant type."
-    [jmx]="oidc/OIDC_Password_Grant.jmx"
-    [tenantMode]=false
-    [skip]=false
-    [modes]="FULL QUICK PUBLISH"
-)
+# declare -A test_scenario09=(
+#     [name]="09-oidc_password_grant"
+#     [display_name]="OIDC Password Grant Type"
+#     [description]="Obtain an access token and an id token using the OAuth 2.0 password grant type."
+#     [jmx]="oidc/OIDC_Password_Grant.jmx"
+#     [tenantMode]=false
+#     [skip]=false
+#     [modes]="FULL QUICK PUBLISH"
+# )
 # declare -A test_scenario10=(
 #     [name]="10-oidc_password_grant_retrieve_user_attributes"
 #     [display_name]="OIDC Password Grant Type Retrieve User Attributes"
@@ -143,15 +143,15 @@ declare -A test_scenario09=(
 #     [skip]=false
 #     [modes]="FULL QUICK PUBLISH"
 # )
-# declare -A test_scenario14=(
-#     [name]="14-Token_Exchange_Grant"
-#     [display_name]="Token Exchange Grant"
-#     [description]="Obtain an access token and an id token using the OAuth Token Exchange grant type."
-#     [jmx]="oauth/Token_Exchange_Grant.jmx"
-#     [tenantMode]=false
-#     [skip]=false
-#     [modes]="FULL QUICK PUBLISH"
-# )
+declare -A test_scenario14=(
+    [name]="14-Token_Exchange_Grant"
+    [display_name]="Token Exchange Grant"
+    [description]="Obtain an access token and an id token using the OAuth Token Exchange grant type."
+    [jmx]="oauth/Token_Exchange_Grant.jmx"
+    [tenantMode]=false
+    [skip]=false
+    [modes]="FULL QUICK PUBLISH"
+)
 # declare -A test_scenario15=(
 #     [name]="15-B2B_oidc_auth_code_redirect_with_consent"
 #     [display_name]="B2B OIDC Auth Code Grant Redirect With Consent"
