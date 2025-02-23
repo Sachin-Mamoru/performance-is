@@ -75,27 +75,27 @@ maxWait = "60000"
 minIdle = "5"
 validationQueryTimeout="1"
 commitOnReturn=false
-
-[session]
-data_source="jdbc/WSO2SessionDB"
-
-[datasource.WSO2SessionDB]
-id = "WSO2SessionDB"
-url = "{session_db_url}"
-username = "wso2carbon"
-password = "wso2carbon"
-driver = "{db_driver}"
-jmxEnabled = false
-[datasource.WSO2SessionDB.pool_options]
-maxActive = "1500"
-defaultAutoCommit=false
-testOnBorrow = true
-testWhileIdle = true
-validationInterval="30000"
-maxWait = "60000"
-minIdle = "5"
-validationQueryTimeout="1"
-commitOnReturn=false
+#
+#[session]
+#data_source="jdbc/WSO2SessionDB"
+#
+#[datasource.WSO2SessionDB]
+#id = "WSO2SessionDB"
+#url = "{session_db_url}"
+#username = "wso2carbon"
+#password = "wso2carbon"
+#driver = "{db_driver}"
+#jmxEnabled = false
+#[datasource.WSO2SessionDB.pool_options]
+#maxActive = "1500"
+#defaultAutoCommit=false
+#testOnBorrow = true
+#testWhileIdle = true
+#validationInterval="30000"
+#maxWait = "60000"
+#minIdle = "5"
+#validationQueryTimeout="1"
+#commitOnReturn=false
 
 [transport.https.properties]
 maxThreads = "750"
