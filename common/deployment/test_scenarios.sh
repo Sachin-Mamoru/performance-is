@@ -96,17 +96,17 @@ declare -A test_scenario08=(
     [jmx]="oidc/OIDC_AuthCode_Redirect_WithoutConsent_Retrieve_User_Attributes_Groups_And_Roles.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="QUICK"
-)
-declare -A test_scenario09=(
-    [name]="09-oidc_password_grant"
-    [display_name]="OIDC Password Grant Type"
-    [description]="Obtain an access token and an id token using the OAuth 2.0 password grant type."
-    [jmx]="oidc/OIDC_Password_Grant.jmx"
-    [tenantMode]=false
-    [skip]=false
     [modes]="PUBLISH"
 )
+# declare -A test_scenario09=(
+#     [name]="09-oidc_password_grant"
+#     [display_name]="OIDC Password Grant Type"
+#     [description]="Obtain an access token and an id token using the OAuth 2.0 password grant type."
+#     [jmx]="oidc/OIDC_Password_Grant.jmx"
+#     [tenantMode]=false
+#     [skip]=false
+#     [modes]="PUBLISH"
+# )
 # declare -A test_scenario10=(
 #     [name]="10-oidc_password_grant_retrieve_user_attributes"
 #     [display_name]="OIDC Password Grant Type Retrieve User Attributes"
