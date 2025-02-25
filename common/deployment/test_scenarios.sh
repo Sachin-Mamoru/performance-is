@@ -62,24 +62,24 @@
 #     [skip]=false
 #     [modes]="FULL QUICK"
 # )
-# declare -A test_scenario05=(
-#     [name]="05-oidc_auth_code_redirect_without_consent"
-#     [display_name]="OIDC Auth Code Grant Redirect Without Consent"
-#     [description]="Obtain an access token and an id token using the OAuth 2.0 authorization code redirect without consent."
-#     [jmx]="oidc/OIDC_AuthCode_Redirect_WithoutConsent.jmx"
-#     [tenantMode]=false
-#     [skip]=false
-#     [modes]="PUBLISH"
-# )
-declare -A test_scenario06=(
-    [name]="06-oidc_auth_code_redirect_without_consent_retrieve_user_attributes"
-    [display_name]="OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes"
-    [description]="Obtain an access token and an id token using the OAuth 2.0 authorization code grant type."
-    [jmx]="oidc/OIDC_AuthCode_Redirect_WithoutConsent_Retrieve_User_Attributes.jmx"
+declare -A test_scenario05=(
+    [name]="05-oidc_auth_code_redirect_without_consent"
+    [display_name]="OIDC Auth Code Grant Redirect Without Consent"
+    [description]="Obtain an access token and an id token using the OAuth 2.0 authorization code redirect without consent."
+    [jmx]="oidc/OIDC_AuthCode_Redirect_WithoutConsent.jmx"
     [tenantMode]=false
     [skip]=false
     [modes]="FULL"
 )
+# declare -A test_scenario06=(
+#     [name]="06-oidc_auth_code_redirect_without_consent_retrieve_user_attributes"
+#     [display_name]="OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes"
+#     [description]="Obtain an access token and an id token using the OAuth 2.0 authorization code grant type."
+#     [jmx]="oidc/OIDC_AuthCode_Redirect_WithoutConsent_Retrieve_User_Attributes.jmx"
+#     [tenantMode]=false
+#     [skip]=false
+#     [modes]="FULL"
+# )
 # declare -A test_scenario07=(
 #     [name]="07-oidc_auth_code_redirect_without_consent_retrieve_user_attributes_and_groups"
 #     [display_name]="OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes and Groups"
@@ -89,15 +89,15 @@ declare -A test_scenario06=(
 #     [skip]=false
 #     [modes]="FULL QUICK"
 # )
-declare -A test_scenario08=(
-    [name]="08-oidc_auth_code_redirect_without_consent_retrieve_user_attributes_groups_and_roles"
-    [display_name]="OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles"
-    [description]="Obtain an access token and an id token using the OAuth 2.0 authorization code grant type."
-    [jmx]="oidc/OIDC_AuthCode_Redirect_WithoutConsent_Retrieve_User_Attributes_Groups_And_Roles.jmx"
-    [tenantMode]=false
-    [skip]=false
-    [modes]="PUBLISH"
-)
+# declare -A test_scenario08=(
+#     [name]="08-oidc_auth_code_redirect_without_consent_retrieve_user_attributes_groups_and_roles"
+#     [display_name]="OIDC Auth Code Grant Redirect Without Consent Retrieve User Attributes Groups and Roles"
+#     [description]="Obtain an access token and an id token using the OAuth 2.0 authorization code grant type."
+#     [jmx]="oidc/OIDC_AuthCode_Redirect_WithoutConsent_Retrieve_User_Attributes_Groups_And_Roles.jmx"
+#     [tenantMode]=false
+#     [skip]=false
+#     [modes]="PUBLISH"
+# )
 # declare -A test_scenario09=(
 #     [name]="09-oidc_password_grant"
 #     [display_name]="OIDC Password Grant Type"
