@@ -75,7 +75,7 @@
           </elementProp>
           <elementProp name="rampUpPeriod" elementType="Argument">
             <stringProp name="Argument.name">rampUpPeriod</stringProp>
-            <stringProp name="Argument.value">${__P(rampUpPeriod,10)}</stringProp>
+            <stringProp name="Argument.value">${__P(rampUpPeriod,100)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -84,12 +84,11 @@
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Create Sub Orgs" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
-          <stringProp name="LoopController.loops">${noOfSubOrgs}</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">${noOfSubOrgs}</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">${noOfThreads}</stringProp>
         <stringProp name="ThreadGroup.ramp_time">${rampUpPeriod}</stringProp>
-        <boolProp name="ThreadGroup.delayedStart">false</boolProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration">3600</stringProp>
         <stringProp name="ThreadGroup.delay">10</stringProp>
@@ -104,26 +103,6 @@
           <stringProp name="CounterConfig.format"></stringProp>
           <boolProp name="CounterConfig.per_user">false</boolProp>
         </CounterConfig>
-        <hashTree/>
-        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="setRequestingNode()" enabled="true">
-          <stringProp name="filename"></stringProp>
-          <stringProp name="parameters"></stringProp>
-          <boolProp name="resetInterpreter">false</boolProp>
-          <stringProp name="script">String deploymentType = vars.get(&quot;deployment&quot;);
-int numOfNodes = Integer.parseInt(vars.get(&quot;noOfNodes&quot;));
-int x = Integer.parseInt(vars.get(&quot;sub_org_idx&quot;));
-int y = x - (x/numOfNodes)*numOfNodes;
-
-if (y == 0 || &quot;active-passive&quot;.equals(deploymentType)) {
-    vars.put(&quot;serverNode&quot;, &quot;node1&quot;);
-} else if (y == 1) {
-    vars.put(&quot;serverNode&quot;, &quot;node2&quot;);
-} else if (y == 2) {
-    vars.put(&quot;serverNode&quot;, &quot;node3&quot;);
-} else {
-    vars.put(&quot;serverNode&quot;, &quot;node4&quot;);
-}</stringProp>
-        </BeanShellPreProcessor>
         <hashTree/>
         <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
           <boolProp name="resetInterpreter">false</boolProp>
@@ -151,12 +130,8 @@ vars.put(&quot;suOrgDescription&quot;, new String(description));
               <stringProp name="Header.value">application/json</stringProp>
             </elementProp>
             <elementProp name="" elementType="Header">
-              <stringProp name="Header.value">Basic ${adminCredentials}</stringProp>
               <stringProp name="Header.name">Authorization</stringProp>
-            </elementProp>
-            <elementProp name="" elementType="Header">
-              <stringProp name="Header.name">X-Server-Select</stringProp>
-              <stringProp name="Header.value">${serverNode}</stringProp>
+              <stringProp name="Header.value">Basic ${adminCredentials}</stringProp>
             </elementProp>
           </collectionProp>
         </HeaderManager>
@@ -180,19 +155,17 @@ vars.put(&quot;suOrgDescription&quot;, new String(description));
           <stringProp name="HTTPSampler.domain">${is_host}</stringProp>
           <stringProp name="HTTPSampler.port">${is_port}</stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
           <stringProp name="HTTPSampler.path">${org_end_point}</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
           <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
           <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">false</boolProp>
-          <boolProp name="HTTPSampler.image_parser">false</boolProp>
-          <boolProp name="HTTPSampler.concurrentDwn">false</boolProp>
-          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
-          <boolProp name="HTTPSampler.md5">false</boolProp>
-          <intProp name="HTTPSampler.ipSourceType">0</intProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
         </HTTPSamplerProxy>
         <hashTree>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="HTTP/1.1 201 Response Assertion" enabled="true">
@@ -221,7 +194,6 @@ vars.put(&quot;suOrgDescription&quot;, new String(description));
             <stringProp name="RegexExtractor.regex">&quot;id&quot;:&quot;([^&quot;]+)&quot; </stringProp>
             <stringProp name="RegexExtractor.template">$1$</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
-            <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
             <stringProp name="RegexExtractor.default">None</stringProp>
           </RegexExtractor>
           <hashTree/>
