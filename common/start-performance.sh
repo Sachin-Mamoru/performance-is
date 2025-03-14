@@ -521,6 +521,8 @@ if [[ $no_of_nodes -gt 3 ]]; then
     ssh_bastion_cmd "./setup/setup-is.sh -n $no_of_nodes -m $db_type -c $is_case_insensitive_username_and_attributes -a wso2is4 -t $keystore_type -i $wso2_is_4_ip -w $wso2_is_3_ip -j $wso2_is_2_ip -k $wso2_is_1_ip -r $rds_host -s $session_rds_host"
 fi
 
+sleep 86400 && echo "Woke up after 24 hours!"
+
 echo ""
 echo "Running performance tests..."
 echo "============================================"
