@@ -65,7 +65,7 @@ function update_mysql_config() {
       "s|{reg_db_url}|jdbc:mysql://$db_instance_ip:3306/REG_DB?useSSL=false\&amp;rewriteBatchedStatements=true|g"
       "s|{db_driver}|com.mysql.jdbc.Driver|g"
     )
-    
+
     for config in "${configs[@]}"; do
       sed -i "$config" "$carbon_home/repository/conf/deployment.toml" || echo "Editing deployment.toml file failed!"
     done
@@ -81,7 +81,7 @@ function update_mssql_config() {
       "s|{reg_db_url}|jdbc:sqlserver://$db_instance_ip:1433;databaseName=REG_DB;SendStringParametersAsUnicode=false;encrypt=true;trustServerCertificate=true;|g"
       "s|{db_driver}|com.microsoft.sqlserver.jdbc.SQLServerDriver|g"
     )
-    
+
     for config in "${configs[@]}"; do
       sed -i "$config" "$carbon_home/repository/conf/deployment.toml" || echo "Editing deployment.toml file failed!"
     done
@@ -225,6 +225,9 @@ sed -i "s|{keystore_type}|$keystore_type|g" \
   "$carbon_home"/repository/conf/deployment.toml || echo "Editing deployment.toml file failed!"
 sed -i "s|{is_case_insensitive_username_and_attributes}|$is_case_insensitive_username_and_attributes|g" \
   "$carbon_home"/repository/conf/deployment.toml || echo "Editing deployment.toml file failed!"
+
+sed -i 's|securerandom.source=file:/dev/random|securerandom.source=file:/dev/urandom|' $JAVA_HOME/conf/security/java.security
+
 if [[ $db_type == "mysql" ]]; then
     update_mysql_config
 elif [[ $db_type == "mssql" ]]; then
