@@ -226,7 +226,10 @@ sed -i "s|{keystore_type}|$keystore_type|g" \
 sed -i "s|{is_case_insensitive_username_and_attributes}|$is_case_insensitive_username_and_attributes|g" \
   "$carbon_home"/repository/conf/deployment.toml || echo "Editing deployment.toml file failed!"
 
-sudo sed -i 's|securerandom.source=file:/dev/random|securerandom.source=file:/dev/urandom|' $JAVA_HOME/conf/security/java.security
+sudo sed -i 's|securerandom.source=file:/dev/random|securerandom.source=file:/dev/urandom|' /etc/java-11-openjdk/security/java.security
+sudo sed -i 's|securerandom.strongAlgorithms=NativePRNGBlocking:SUN,DRBG:SUN|securerandom.strongAlgorithms=NativePRNGNonBlocking:SUN,DRBG:SUN|' /etc/java-11-openjdk/security/java.security
+
+sudo ln -sf /dev/urandom /dev/random
 
 if [[ $db_type == "mysql" ]]; then
     update_mysql_config
