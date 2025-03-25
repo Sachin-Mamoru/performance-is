@@ -675,7 +675,7 @@ function test_scenarios() {
                 jmeter_command+=" -l $report_location/results.jtl"
 
                 # Set your target time in UTC or your system's local time
-                TARGET_TIME="2025-03-25 15:50:00"
+                TARGET_TIME="2025-03-25 17:10:00"
                 
                 # Convert the target time to epoch timestamp
                 TARGET_EPOCH=$(date -d "$TARGET_TIME" +%s)
