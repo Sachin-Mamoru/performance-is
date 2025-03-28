@@ -627,6 +627,8 @@ trap exit_handler EXIT
 
 function test_scenarios() {
 
+    initiailize_test
+
     # Set your target time in UTC or your system's local time
     TARGET_TIME="2025-03-28 10:50:00"
 
@@ -648,7 +650,6 @@ function test_scenarios() {
     # When the time has come
     echo "It's time! Starting at: $(date)"
 
-    initiailize_test
     for heap in "${heap_sizes_array[@]}"; do
         declare -ng scenario
         for scenario in ${!test_scenario@}; do
