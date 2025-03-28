@@ -627,6 +627,27 @@ trap exit_handler EXIT
 
 function test_scenarios() {
 
+    # Set your target time in UTC or your system's local time
+    TARGET_TIME="2025-03-28 10:50:00"
+
+    # Convert the target time to epoch timestamp
+    TARGET_EPOCH=$(date -d "$TARGET_TIME" +%s)
+
+    # Show the target time and epoch
+    echo "Target time     : $TARGET_TIME"
+    echo "Target epoch    : $TARGET_EPOCH"
+    echo "Current time    : $(date)"
+    echo "Current epoch   : $(date +%s)"
+    echo "Waiting until the target time..."
+
+    # Wait until the current epoch reaches or exceeds the target epoch
+    while [ $(date +%s) -lt $TARGET_EPOCH ]; do
+        sleep 0.5
+    done
+
+    # When the time has come
+    echo "It's time! Starting at: $(date)"
+
     initiailize_test
     for heap in "${heap_sizes_array[@]}"; do
         declare -ng scenario
@@ -673,27 +694,6 @@ function test_scenarios() {
                 done
 
                 jmeter_command+=" -l $report_location/results.jtl"
-
-                # Set your target time in UTC or your system's local time
-                TARGET_TIME="2025-03-28 10:15:00"
-
-                # Convert the target time to epoch timestamp
-                TARGET_EPOCH=$(date -d "$TARGET_TIME" +%s)
-
-                # Show the target time and epoch
-                echo "Target time     : $TARGET_TIME"
-                echo "Target epoch    : $TARGET_EPOCH"
-                echo "Current time    : $(date)"
-                echo "Current epoch   : $(date +%s)"
-                echo "Waiting until the target time..."
-
-                # Wait until the current epoch reaches or exceeds the target epoch
-                while [ $(date +%s) -lt $TARGET_EPOCH ]; do
-                    sleep 0.5
-                done
-
-                # When the time has come
-                echo "It's time! Starting at: $(date)"
 
                 echo ""
                 echo "Starting JMeter Client with JVM_ARGS=$JVM_ARGS"
