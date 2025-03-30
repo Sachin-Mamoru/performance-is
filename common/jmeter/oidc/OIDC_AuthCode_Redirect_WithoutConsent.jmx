@@ -385,9 +385,10 @@ if (y == 0 || &quot;active-passive&quot;.equals(deploymentType)) {
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+          <GaussianRandomTimer guiclass="GaussianRandomTimerGui" testclass="GaussianRandomTimer" testname="Gaussian Random Timer" enabled="true">
             <stringProp name="ConstantTimer.delay">6000</stringProp>
-          </ConstantTimer>
+            <stringProp name="RandomTimer.range">2000</stringProp>
+          </GaussianRandomTimer>
           <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="HTTP/1.1 302 Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
