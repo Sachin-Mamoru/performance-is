@@ -32,7 +32,7 @@ validation_query = "SELECT 1"
 username = "wso2carbon"
 password = "wso2carbon"
 [database.identity_db.pool_options]
-maxActive = "1500"
+maxActive = "3000"
 defaultAutoCommit=false
 testOnBorrow = true
 testWhileIdle = true
@@ -50,7 +50,7 @@ validation_query = "SELECT 1"
 username = "wso2carbon"
 password = "wso2carbon"
 [database.shared_db.pool_options]
-maxActive = "1500"
+maxActive = "3000"
 defaultAutoCommit=false
 testOnBorrow = true
 testWhileIdle = true
@@ -67,7 +67,7 @@ validation_query = "SELECT 1"
 username = "wso2carbon"
 password = "wso2carbon"
 [database.user.pool_options]
-maxActive = "1500"
+maxActive = "3000"
 defaultAutoCommit=false
 testOnBorrow = true
 testWhileIdle = true
@@ -89,7 +89,7 @@ password = "wso2carbon"
 driver = "{db_driver}"
 jmxEnabled = false
 [datasource.WSO2SessionDB.pool_options]
-maxActive = "1500"
+maxActive = "3000"
 defaultAutoCommit=false
 testOnBorrow = true
 testWhileIdle = true
@@ -100,8 +100,8 @@ validationQueryTimeout="1"
 commitOnReturn=false
 
 [transport.https.properties]
-maxThreads = "750"
-acceptCount = "750"
+maxThreads = "1500"
+acceptCount = "1500"
 
 [authentication.consent]
 prompt = true
