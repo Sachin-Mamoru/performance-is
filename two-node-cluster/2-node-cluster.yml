@@ -440,10 +440,16 @@ Resources:
             - DEBIAN_FRONTEND=noninteractive apt-get install -yq nginx
             - mkdir -p /etc/nginx/ssl/is
 
+  WSO2ISClusterPlacementGroupsuffix:
+    Type: AWS::EC2::PlacementGroup
+    Properties:
+      Strategy: cluster
+
   WSO2ISNodeLaunchConfigurationsuffix:
     Type: 'AWS::AutoScaling::LaunchConfiguration'
     Properties:
       PlacementTenancy: dedicated
+      PlacementGroup: !Ref WSO2ISClusterPlacementGroupsuffix
       # Uncomment below to assign a public IP to the IS instance.
       # AssociatePublicIpAddress: true
       ImageId: !FindInMap
