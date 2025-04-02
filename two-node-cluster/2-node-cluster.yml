@@ -448,27 +448,25 @@ Resources:
   WSO2ISNodeLaunchTemplatesuffix:
     Type: 'AWS::EC2::LaunchTemplate'
     Properties:
-      LaunchTemplateName: !Sub WSO2ISNodeLaunchTemplate-${AWS::StackName}
+      LaunchTemplateName: WSO2ISNodeLaunchTemplate
       LaunchTemplateData:
-        # Uncomment below to assign a public IP to the IS instance.
-        # AssociatePublicIpAddress: true
+        InstanceType: !Ref WSO2InstanceType
         ImageId: !FindInMap
           - WSO2ISAMIRegionMapsuffix
           - !Ref 'AWS::Region'
           - AMI
-        InstanceType: !Ref WSO2InstanceType
+        KeyName: !Ref KeyPairName
+        Placement:
+          Tenancy: dedicated
+          GroupName: !Ref WSO2ISClusterPlacementGroupsuffix
+        SecurityGroupIds:
+          - !Ref WSO2ISSecurityGroupsuffix
         BlockDeviceMappings:
           - DeviceName: /dev/sda1
             Ebs:
               VolumeSize: '20'
               VolumeType: gp2
-              DeleteOnTermination: 'true'
-        KeyName: !Ref KeyPairName
-        Placement:
-          Tenancy: dedicated
-          GroupName: !Ref WSO2ISClusterPlacementGroupsuffix
-        SecurityGroups:
-          - !Ref WSO2ISSecurityGroupsuffix
+              DeleteOnTermination: true
         UserData: !Base64
           'Fn::Sub':
             - |+
