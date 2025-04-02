@@ -441,7 +441,7 @@ Resources:
             - mkdir -p /etc/nginx/ssl/is
 
   WSO2ISClusterPlacementGroupsuffix:
-    Type: AWS::EC2::PlacementGroup
+    Type: 'AWS::EC2::PlacementGroup'
     Properties:
       Strategy: cluster
 
