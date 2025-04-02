@@ -448,7 +448,7 @@ Resources:
   WSO2ISNodeLaunchTemplatesuffix:
     Type: 'AWS::EC2::LaunchTemplate'
     Properties:
-      LaunchTemplateName: WSO2ISNodeLaunchTemplate
+      LaunchTemplateName: !Sub WSO2ISNodeLaunchTemplate-${AWS::StackName}
       LaunchTemplateData:
         InstanceType: !Ref WSO2InstanceType
         ImageId: !FindInMap
