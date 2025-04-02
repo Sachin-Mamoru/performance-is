@@ -449,6 +449,7 @@ Resources:
     Type: 'AWS::AutoScaling::LaunchConfiguration'
     Properties:
       PlacementTenancy: dedicated
+      PlacementGroupName: !Ref WSO2ISClusterPlacementGroupsuffix
       # Uncomment below to assign a public IP to the IS instance.
       # AssociatePublicIpAddress: true
       ImageId: !FindInMap
@@ -465,8 +466,6 @@ Resources:
       KeyName: !Ref KeyPairName
       SecurityGroups:
         - !Ref WSO2ISSecurityGroupsuffix
-      Placement:
-        GroupName: !Ref WSO2ISClusterPlacementGroupsuffix
       UserData: !Base64
         'Fn::Sub':
           - |+
