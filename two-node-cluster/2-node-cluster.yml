@@ -528,8 +528,6 @@ Resources:
         - Key: User
           Value: !Ref UserTag
           PropagateAtLaunch: 'true'
-    DependsOn:
-      - WSO2ISNodeLaunchTemplatesuffix
 
   WSO2ISNode2AutoScalingGroupsuffix:
     Type: 'AWS::AutoScaling::AutoScalingGroup'
@@ -554,8 +552,6 @@ Resources:
         - Key: User
           Value: !Ref UserTag
           PropagateAtLaunch: 'true'
-    DependsOn:
-      - WSO2ISNodeLaunchTemplatesuffix
 
 Outputs:
   InstanceID:
