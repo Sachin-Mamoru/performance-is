@@ -443,6 +443,7 @@ Resources:
   WSO2ISNodeLaunchConfigurationsuffix:
     Type: 'AWS::AutoScaling::LaunchConfiguration'
     Properties:
+      PlacementTenancy: dedicated
       # Uncomment below to assign a public IP to the IS instance.
       # AssociatePublicIpAddress: true
       ImageId: !FindInMap
