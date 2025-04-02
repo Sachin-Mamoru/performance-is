@@ -688,9 +688,9 @@ function test_scenarios() {
                 echo "Waiting until the target time..."
                 
                 # Wait until the current epoch reaches or exceeds the target epoch
-                while [ $(date +%s) -lt $TARGET_EPOCH ]; do
-                    sleep 0.5
-                done
+                # while [ $(date +%s) -lt $TARGET_EPOCH ]; do
+                #     sleep 0.5
+                # done
                 
                 # When the time has come
                 echo "It's time! Starting at: $(date)"
