@@ -464,7 +464,7 @@ Resources:
               DeleteOnTermination: 'true'
         Placement:
           Tenancy: dedicated
-          GroupName: !Ref WSO2ISPlacementGroupSuffix
+          GroupName: !Ref WSO2ISClusterPlacementGroupsuffix
         SecurityGroups:
           - !Ref WSO2ISSecurityGroupsuffix
         UserData: !Base64
