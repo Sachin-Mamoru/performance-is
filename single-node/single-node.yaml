@@ -224,7 +224,7 @@ Resources:
       DBSnapshotIdentifier: !Ref DBSnapshotId
       EngineVersion: !FindInMap [DBTypeMap, !Ref DBType, Version]
       Engine: !FindInMap [DBTypeMap, !Ref DBType, DBType]
-      EnablePerformanceInsights: 'false'
+      EnablePerformanceInsights: 'true'
       LicenseModel: !FindInMap [DBTypeMap, !Ref DBType, License]
       MasterUsername: !Ref DBUsername
       MasterUserPassword: !Ref DBPassword
@@ -245,7 +245,7 @@ Resources:
       DBInstanceIdentifier: WSO2ISSessionDBInstancesuffix
       EngineVersion: !FindInMap [DBTypeMap, !Ref DBType, Version]
       Engine: !FindInMap [DBTypeMap, !Ref DBType, DBType]
-      EnablePerformanceInsights: 'false'
+      EnablePerformanceInsights: 'true'
       LicenseModel: !FindInMap [DBTypeMap, !Ref DBType, License]
       MasterUsername: !Ref SessionDBUsername
       MasterUserPassword: !Ref SessionDBPassword
@@ -462,6 +462,8 @@ Resources:
               VolumeSize: '20'
               VolumeType: gp2
               DeleteOnTermination: 'true'
+        Monitoring:
+          Enabled: true
         Placement:
           Tenancy: dedicated
           GroupName: !Ref WSO2ISClusterPlacementGroupsuffix
