@@ -440,56 +440,64 @@ Resources:
             - DEBIAN_FRONTEND=noninteractive apt-get install -yq nginx
             - mkdir -p /etc/nginx/ssl/is
 
-  WSO2ISNodeLaunchConfigurationsuffix:
-    Type: 'AWS::AutoScaling::LaunchConfiguration'
+  WSO2ISClusterPlacementGroupsuffix:
+    Type: 'AWS::EC2::PlacementGroup'
     Properties:
-      # Uncomment below to assign a public IP to the IS instance.
-      # AssociatePublicIpAddress: true
-      ImageId: !FindInMap
-        - WSO2ISAMIRegionMapsuffix
-        - !Ref 'AWS::Region'
-        - AMI
-      InstanceType: !Ref WSO2InstanceType
-      BlockDeviceMappings:
-        - DeviceName: /dev/sda1
-          Ebs:
-            VolumeSize: '20'
-            VolumeType: gp2
-            DeleteOnTermination: 'true'
-      KeyName: !Ref KeyPairName
-      SecurityGroups:
-        - !Ref WSO2ISSecurityGroupsuffix
-      UserData: !Base64
-        'Fn::Sub':
-          - |+
-            #!/bin/bash
-            export PATH=~/.local/bin:$PATH
-            curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-            curl https://packages.microsoft.com/config/ubuntu/18.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
-            apt-get update
-            DEBIAN_FRONTEND=noninteractive apt-get install -yq mysql-client
-            DEBIAN_FRONTEND=noninteractive apt install -y postgresql-client
-            DEBIAN_FRONTEND=noninteractive apt-get install -y unzip
-            DEBIAN_FRONTEND=noninteractive env ACCEPT_EULA=Y apt-get install -y mssql-tools unixodbc-dev
-            export PATH=/opt/mssql-tools/bin:$PATH
-            echo "export PATH=$PATH" >>/etc/environment
-            curl -o jdk-setup.tar.gz https://performance-is-packs.s3.amazonaws.com/resources/jdk-11.0.15.1_linux-x64_bin.tar.gz
-            sudo mkdir /usr/lib/jvm
-            sudo tar -xvf jdk-setup.tar.gz -C /usr/lib/jvm
-            sudo mv /usr/lib/jvm/jdk* /usr/lib/jvm/jdk
-            sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk/bin/java" 1
-            sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk/bin/javac" 1
-            sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/jvm/jdk/bin/javaws" 1
-            sudo chmod a+x /usr/bin/java
-            sudo chmod a+x /usr/bin/javac
-            sudo chmod a+x /usr/bin/javaws
-            export JAVA_HOME=/usr/lib/jvm/jdk
-            sudo su
-            echo "export JAVA_HOME=/usr/lib/jvm/jdk" >>/etc/environment
-            echo "export PGPASSWORD=${DBPassword}" >>/etc/environment
-            source /etc/environment
-            exit
-          - DBPassword: !Ref DBPassword
+      Strategy: cluster
+
+  WSO2ISNodeLaunchTemplatesuffix:
+    Type: 'AWS::EC2::LaunchTemplate'
+    Properties:
+      LaunchTemplateName: !Sub WSO2ISNodeLaunchTemplate-${AWS::StackName}
+      LaunchTemplateData:
+        InstanceType: !Ref WSO2InstanceType
+        ImageId: !FindInMap
+          - WSO2ISAMIRegionMapsuffix
+          - !Ref 'AWS::Region'
+          - AMI
+        KeyName: !Ref KeyPairName
+        Placement:
+          Tenancy: dedicated
+          GroupName: !Ref WSO2ISClusterPlacementGroupsuffix
+        SecurityGroupIds:
+          - !Ref WSO2ISSecurityGroupsuffix
+        BlockDeviceMappings:
+          - DeviceName: /dev/sda1
+            Ebs:
+              VolumeSize: '20'
+              VolumeType: gp2
+              DeleteOnTermination: true
+        UserData: !Base64
+          'Fn::Sub':
+            - |+
+              #!/bin/bash
+              export PATH=~/.local/bin:$PATH
+              curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+              curl https://packages.microsoft.com/config/ubuntu/18.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+              apt-get update
+              DEBIAN_FRONTEND=noninteractive apt-get install -yq mysql-client
+              DEBIAN_FRONTEND=noninteractive apt install -y postgresql-client
+              DEBIAN_FRONTEND=noninteractive apt-get install -y unzip
+              DEBIAN_FRONTEND=noninteractive env ACCEPT_EULA=Y apt-get install -y mssql-tools unixodbc-dev
+              export PATH=/opt/mssql-tools/bin:$PATH
+              echo "export PATH=$PATH" >>/etc/environment
+              curl -o jdk-setup.tar.gz https://performance-is-packs.s3.amazonaws.com/resources/jdk-11.0.15.1_linux-x64_bin.tar.gz
+              sudo mkdir /usr/lib/jvm
+              sudo tar -xvf jdk-setup.tar.gz -C /usr/lib/jvm
+              sudo mv /usr/lib/jvm/jdk* /usr/lib/jvm/jdk
+              sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk/bin/java" 1
+              sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk/bin/javac" 1
+              sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/jvm/jdk/bin/javaws" 1
+              sudo chmod a+x /usr/bin/java
+              sudo chmod a+x /usr/bin/javac
+              sudo chmod a+x /usr/bin/javaws
+              export JAVA_HOME=/usr/lib/jvm/jdk
+              sudo su
+              echo "export JAVA_HOME=/usr/lib/jvm/jdk" >>/etc/environment
+              echo "export PGPASSWORD=${DBPassword}" >>/etc/environment
+              source /etc/environment
+              exit
+            - DBPassword: !Ref DBPassword
     DependsOn:
       - WSO2ISSecurityGroupsuffix
       - WSO2ISVPCInternetGatewayAttachmentsuffix
@@ -498,7 +506,9 @@ Resources:
   WSO2ISNode1AutoScalingGroupsuffix:
     Type: 'AWS::AutoScaling::AutoScalingGroup'
     Properties:
-      LaunchConfigurationName: !Ref WSO2ISNodeLaunchConfigurationsuffix
+      LaunchTemplate:
+        LaunchTemplateId: !Ref WSO2ISNodeLaunchTemplatesuffix
+        Version: !GetAtt WSO2ISNodeLaunchTemplatesuffix.LatestVersionNumber
       DesiredCapacity: 1
       MinSize: 1
       MaxSize: 1
@@ -517,12 +527,14 @@ Resources:
           Value: !Ref UserTag
           PropagateAtLaunch: 'true'
     DependsOn:
-      - WSO2ISNodeLaunchConfigurationsuffix
+      - WSO2ISNodeLaunchTemplatesuffix
 
   WSO2ISNode2AutoScalingGroupsuffix:
     Type: 'AWS::AutoScaling::AutoScalingGroup'
     Properties:
-      LaunchConfigurationName: !Ref WSO2ISNodeLaunchConfigurationsuffix
+      LaunchTemplate:
+        LaunchTemplateId: !Ref WSO2ISNodeLaunchTemplatesuffix
+        Version: !GetAtt WSO2ISNodeLaunchTemplatesuffix.LatestVersionNumber
       DesiredCapacity: 1
       MinSize: 1
       MaxSize: 1
@@ -541,7 +553,7 @@ Resources:
           Value: !Ref UserTag
           PropagateAtLaunch: 'true'
     DependsOn:
-      - WSO2ISNodeLaunchConfigurationsuffix
+      - WSO2ISNodeLaunchTemplatesuffix
 
 Outputs:
   InstanceID:
