@@ -141,7 +141,7 @@ declare -A test_scenario13=(
     [jmx]="saml/SAML2_SSO_Redirect_Binding.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="FULL QUICK PUBLISH2"
+    [modes]="FULL QUICK PUBLISH"
 )
 declare -A test_scenario14=(
     [name]="14-Token_Exchange_Grant"
@@ -150,7 +150,7 @@ declare -A test_scenario14=(
     [jmx]="oauth/Token_Exchange_Grant.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="FULL QUICK PUBLISH2"
+    [modes]="FULL QUICK PUBLISH"
 )
 declare -A test_scenario15=(
     [name]="15-B2B_oidc_auth_code_redirect_with_consent"
