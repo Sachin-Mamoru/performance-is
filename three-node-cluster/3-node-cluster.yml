@@ -771,8 +771,8 @@ Mappings:
     "true":
       DBIops: 7000
       SessionDBIops: 7000
-      DBAllocationStorage: 100
-      SessionDBAllocationStorage: 100
+      DBAllocationStorage: 140
+      SessionDBAllocationStorage: 140
     "false":
       DBIops: 1000
       SessionDBIops: 1000
