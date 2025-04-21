@@ -261,7 +261,7 @@ elif [ "$concurrency" == "500-3000" ]; then
     default_concurrent_users="500 1000 1500 2000 2500 3000"
 elif [ "$concurrency" == "1000-3000" ]; then
     echo "Running tests for concurrency level 1000-3000"
-    default_concurrent_users="1000 1500 2000 2500 3000"
+    default_concurrent_users="3000"
 elif [ "$concurrency" == "50-50" ]; then
     echo "Running tests for concurrency level 50"
     default_concurrent_users="50"
@@ -539,7 +539,7 @@ function initiailize_test() {
             done
         done
     fi
-    
+
     if [[ ! -z $mode ]]; then
         declare -n scenario
         for scenario in ${!test_scenario@}; do
