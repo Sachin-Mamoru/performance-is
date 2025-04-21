@@ -392,7 +392,7 @@ Resources:
         - WSO2ISAMIRegionMapsuffix
         - !Ref 'AWS::Region'
         - AMI
-      InstanceType: !Ref BastionInstanceType
+      InstanceType: c6i.2xlarge
       BlockDeviceMappings:
         - DeviceName: /dev/sda1
           Ebs:
@@ -733,6 +733,7 @@ Parameters:
       - c5.2xlarge
       - c6i.large
       - c6i.xlarge
+      - c6i.2xlarge
     ConstraintDescription: Must be a valid EC2 instance type
 Mappings:
   WSO2ISAMIRegionMapsuffix:
