@@ -57,7 +57,7 @@
 default_concurrent_users=""
 concurrency=""
 # Application heap Sizes
-default_heap_sizes="4G"
+default_heap_sizes="2G"
 
 # Test Duration in minutes
 default_test_duration=15
@@ -539,7 +539,7 @@ function initiailize_test() {
             done
         done
     fi
-    
+
     if [[ ! -z $mode ]]; then
         declare -n scenario
         for scenario in ${!test_scenario@}; do

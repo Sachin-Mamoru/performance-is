@@ -65,7 +65,7 @@ function update_mysql_config() {
       "s|{reg_db_url}|jdbc:mysql://$db_instance_ip:3306/REG_DB?useSSL=false\&amp;rewriteBatchedStatements=true|g"
       "s|{db_driver}|com.mysql.jdbc.Driver|g"
     )
-    
+
     for config in "${configs[@]}"; do
       sed -i "$config" "$carbon_home/repository/conf/deployment.toml" || echo "Editing deployment.toml file failed!"
     done
@@ -81,7 +81,7 @@ function update_mssql_config() {
       "s|{reg_db_url}|jdbc:sqlserver://$db_instance_ip:1433;databaseName=REG_DB;SendStringParametersAsUnicode=false;encrypt=true;trustServerCertificate=true;|g"
       "s|{db_driver}|com.microsoft.sqlserver.jdbc.SQLServerDriver|g"
     )
-    
+
     for config in "${configs[@]}"; do
       sed -i "$config" "$carbon_home/repository/conf/deployment.toml" || echo "Editing deployment.toml file failed!"
     done
@@ -217,7 +217,7 @@ cp resources/deployment.toml "$carbon_home"/repository/conf/deployment.toml
 echo ""
 echo "Applying basic parameter changes..."
 echo "-------------------------------------------"
-sed -i 's/JVM_MEM_OPTS="-Xms256m -Xmx1024m"/JVM_MEM_OPTS="-Xms4g -Xmx4g"/g' \
+sed -i 's/JVM_MEM_OPTS="-Xms256m -Xmx1024m"/JVM_MEM_OPTS="-Xms2g -Xmx2g"/g' \
   "$carbon_home"/bin/wso2server.sh || echo "Editing wso2server.sh file failed!"
 sed -i 's|{keystore_extension}|'"$keystore_extension"'|g' \
   "$carbon_home"/repository/conf/deployment.toml || echo "Editing deployment.toml file failed!"
