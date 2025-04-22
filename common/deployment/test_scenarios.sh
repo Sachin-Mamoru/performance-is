@@ -33,7 +33,7 @@ declare -A test_scenario1=(
     [jmx]="oidc/OIDC_AuthCode_Redirect_WithConsent.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="FULL QUICK PUBLISH2"
+    [modes]="FULL2 QUICK PUBLISH2"
 )
 declare -A test_scenario2=(
     [name]="02-oidc_auth_code_redirect_with_consent_retrieve_user_attributes"
@@ -69,7 +69,7 @@ declare -A test_scenario05=(
     [jmx]="oidc/OIDC_AuthCode_Redirect_WithoutConsent.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="FULL2 QUICK PUBLISH"
+    [modes]="FULL2 QUICK PUBLISH2"
 )
 declare -A test_scenario06=(
     [name]="06-oidc_auth_code_redirect_without_consent_retrieve_user_attributes"
@@ -105,7 +105,7 @@ declare -A test_scenario09=(
     [jmx]="oidc/OIDC_Password_Grant.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="FULL2 QUICK PUBLISH2"
+    [modes]="FULL2 QUICK PUBLISH"
 )
 declare -A test_scenario10=(
     [name]="10-oidc_password_grant_retrieve_user_attributes"
@@ -141,7 +141,7 @@ declare -A test_scenario13=(
     [jmx]="saml/SAML2_SSO_Redirect_Binding.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="FULL2 QUICK PUBLISH2"
+    [modes]="FULL QUICK PUBLISH2"
 )
 declare -A test_scenario14=(
     [name]="14-Token_Exchange_Grant"
