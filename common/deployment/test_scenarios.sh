@@ -141,7 +141,7 @@ declare -A test_scenario13=(
     [jmx]="saml/SAML2_SSO_Redirect_Binding.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="FULL2 QUICK PUBLISH"
+    [modes]="FULL QUICK PUBLISH2"
 )
 declare -A test_scenario14=(
     [name]="14-Token_Exchange_Grant"
