@@ -78,7 +78,7 @@ declare -A test_scenario06=(
     [jmx]="oidc/OIDC_AuthCode_Redirect_WithoutConsent_Retrieve_User_Attributes.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="FULL2 QUICK PUBLISH2"
+    [modes]="FULL2 QUICK PUBLISH"
 )
 declare -A test_scenario07=(
     [name]="07-oidc_auth_code_redirect_without_consent_retrieve_user_attributes_and_groups"
@@ -96,7 +96,7 @@ declare -A test_scenario08=(
     [jmx]="oidc/OIDC_AuthCode_Redirect_WithoutConsent_Retrieve_User_Attributes_Groups_And_Roles.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="FULL2 QUICK PUBLISH2 OIDC_AUTH_CODE_REDIRECT_WITHOUT_CONSENT_UA_GROUPS_ROLES_FLOW"
+    [modes]="FULL2 QUICK PUBLISH OIDC_AUTH_CODE_REDIRECT_WITHOUT_CONSENT_UA_GROUPS_ROLES_FLOW"
 )
 declare -A test_scenario09=(
     [name]="09-oidc_password_grant"
@@ -105,7 +105,7 @@ declare -A test_scenario09=(
     [jmx]="oidc/OIDC_Password_Grant.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="FULL2 QUICK PUBLISH"
+    [modes]="FULL2 QUICK PUBLISH2"
 )
 declare -A test_scenario10=(
     [name]="10-oidc_password_grant_retrieve_user_attributes"
