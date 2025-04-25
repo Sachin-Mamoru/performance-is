@@ -685,10 +685,10 @@ Mappings:
       DBType: 'postgres'
   HighConcurrencyModeMap:
     "true":
-      DBIops: 5000
-      SessionDBIops: 5000
-      DBAllocationStorage: 100
-      SessionDBAllocationStorage: 100
+      DBIops: 7000
+      SessionDBIops: 7000
+      DBAllocationStorage: 140
+      SessionDBAllocationStorage: 140
     "false":
       DBIops: 1000
       SessionDBIops: 1000
