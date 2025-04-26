@@ -24,7 +24,7 @@ declare -A test_scenario0=(
     [jmx]="oauth/OAuth_Client_Credentials_Grant.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="FULL2 PUBLISH2"
+    [modes]="FULL2 PUBLISH"
 )
 declare -A test_scenario1=(
     [name]="01-oidc_auth_code_redirect_with_consent"
@@ -105,7 +105,7 @@ declare -A test_scenario09=(
     [jmx]="oidc/OIDC_Password_Grant.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="FULL QUICK PUBLISH2"
+    [modes]="FULL QUICK PUBLISH"
 )
 declare -A test_scenario10=(
     [name]="10-oidc_password_grant_retrieve_user_attributes"
