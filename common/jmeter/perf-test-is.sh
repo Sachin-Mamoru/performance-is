@@ -689,7 +689,7 @@ function test_scenarios() {
                 if [ "$SHOULD_RUN" = true ]; then
 
                     # Set your target time in UTC or your system's local time
-                    TARGET_TIME="2025-09-26 07:11:00"
+                    TARGET_TIME="2025-09-26 17:45:00"
 
                     # Convert the target time to epoch timestamp
                     TARGET_EPOCH=$(date -d "$TARGET_TIME" +%s)
