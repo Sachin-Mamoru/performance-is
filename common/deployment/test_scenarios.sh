@@ -150,7 +150,7 @@ declare -A test_scenario14=(
     [jmx]="oauth/Token_Exchange_Grant.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="FULL QUICK PUBLISH"
+    [modes]="FULL QUICK PUBLISH2"
 )
 declare -A test_scenario15=(
     [name]="15-B2B_oidc_auth_code_redirect_with_consent"
@@ -168,5 +168,5 @@ declare -A test_scenario16=(
     [jmx]="app-native-auth/App_Native_Auth.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="FULL PUBLISH2"
+    [modes]="FULL PUBLISH"
 )
