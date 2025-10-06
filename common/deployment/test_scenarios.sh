@@ -24,7 +24,7 @@ declare -A test_scenario0=(
     [jmx]="oauth/OAuth_Client_Credentials_Grant.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="FULL PUBLISH2"
+    [modes]="FULL PUBLISH"
 )
 declare -A test_scenario1=(
     [name]="01-oidc_auth_code_redirect_with_consent"
@@ -168,5 +168,5 @@ declare -A test_scenario16=(
     [jmx]="app-native-auth/App_Native_Auth.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="FULL PUBLISH"
+    [modes]="FULL PUBLISH2"
 )
