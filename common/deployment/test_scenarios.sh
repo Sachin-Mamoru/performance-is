@@ -69,7 +69,7 @@ declare -A test_scenario05=(
     [jmx]="oidc/OIDC_AuthCode_Redirect_WithoutConsent.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="FULL QUICK PUBLISH2"
+    [modes]="FULL QUICK PUBLISH"
 )
 declare -A test_scenario06=(
     [name]="06-oidc_auth_code_redirect_without_consent_retrieve_user_attributes"
