@@ -489,6 +489,10 @@ function run_jmeter_scripts() {
 
 function run_b2b_test_data_scripts() {
 
+
+    echo "5m Sleep before Running b2b test data setup scripts"
+    sleep 5m
+
     echo "Running b2b test data setup scripts"
     echo "=========================================================================================="
     declare -a scripts=("TestData_Add_Sub_Orgs.jmx" "TestData_Add_B2B_OAuth_Apps.jmx" "TestData_SCIM2_Add_Sub_Org_Users.jmx")
