@@ -66,7 +66,7 @@ test_duration=$default_test_duration
 default_warm_up_time=5
 warm_up_time=$default_warm_up_time
 # Heap size of JMeter Client
-default_jmeter_client_heap_size=2G
+default_jmeter_client_heap_size=4G
 jmeter_client_heap_size=$default_jmeter_client_heap_size
 
 # Scenario names to include
@@ -693,7 +693,7 @@ function test_scenarios() {
                 if [ "$SHOULD_RUN" = true ]; then
 
                     # Set your target time in UTC or your system's local time
-                    TARGET_TIME="2025-11-02 21:10:00"
+                    TARGET_TIME="2025-11-03 05:30:00"
 
                     # Convert the target time to epoch timestamp
                     TARGET_EPOCH=$(date -d "$TARGET_TIME" +%s)

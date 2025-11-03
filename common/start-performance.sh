@@ -40,7 +40,7 @@ bastion_instance_type="$default_bastion_instance_type"
 keystore_type="JKS"
 db_type="mysql"
 is_case_insensitive_username_and_attributes="false"
-enable_high_concurrency=false
+enable_high_concurrency=true
 use_db_snapshot=false
 db_snapshot_id=""
 

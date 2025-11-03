@@ -426,7 +426,13 @@ Resources:
         - WSO2ISAMIRegionMapsuffix
         - !Ref 'AWS::Region'
         - AMI
-      InstanceType: !Ref BastionInstanceType
+      InstanceType: c6i.2xlarge
+      BlockDeviceMappings:
+        - DeviceName: /dev/sda1
+          Ebs:
+            VolumeSize: 50
+            VolumeType: gp2
+            DeleteOnTermination: 'true'
       BlockDeviceMappings:
         - DeviceName: /dev/sda1
           Ebs:
