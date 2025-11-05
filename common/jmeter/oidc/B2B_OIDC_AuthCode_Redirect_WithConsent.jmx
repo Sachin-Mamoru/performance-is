@@ -592,6 +592,17 @@ if (y == 0 || &quot;active-passive&quot;.equals(deploymentType)) {
               <stringProp name="Assertion.custom_message">Test failed - common auth login</stringProp>
             </ResponseAssertion>
             <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="authFailureStatus Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-586227372">authFailureStatus</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">6</intProp>
+              <stringProp name="Assertion.custom_message">Test failed - common auth login</stringProp>
+              <stringProp name="Assertion.scope">all</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - sessionDataKey" enabled="true">
               <collectionProp name="Asserion.test_strings">
                 <stringProp name="893427006">sessionDataKey=</stringProp>
