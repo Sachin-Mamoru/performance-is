@@ -66,7 +66,7 @@ test_duration=$default_test_duration
 default_warm_up_time=5
 warm_up_time=$default_warm_up_time
 # Heap size of JMeter Client
-default_jmeter_client_heap_size=2G
+default_jmeter_client_heap_size=8G
 jmeter_client_heap_size=$default_jmeter_client_heap_size
 
 # Scenario names to include
@@ -488,10 +488,6 @@ function run_jmeter_scripts() {
 }
 
 function run_b2b_test_data_scripts() {
-
-
-    echo "5m Sleep before Running b2b test data setup scripts"
-    sleep 5m
 
     echo "Running b2b test data setup scripts"
     echo "=========================================================================================="
