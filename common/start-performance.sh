@@ -457,6 +457,9 @@ scp_bastion_cmd "$is_setup" "/home/ubuntu/wso2is.zip"
 scp_bastion_cmd "$key_file" "/home/ubuntu/private_key.pem"
 scp_r_bastion_cmd "$results_dir/lib/*" "/home/ubuntu/"
 
+rds_host="wso2isdbinstance13590.cvcrys1zedh5.us-east-1.rds.amazonaws.com"
+session_rds_host="wso2issessiondbinstance13590.cvcrys1zedh5.us-east-1.rds.amazonaws.com"
+
 echo ""
 echo "Running Bastion Node setup script..."
 echo "============================================"
