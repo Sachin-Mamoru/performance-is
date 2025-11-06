@@ -614,7 +614,7 @@ function initiailize_test() {
         mv test-metadata.json results/
 
         if [ $mode == "B2B" ]; then
-            run_b2b_test_data_script
+            run_b2b_test_data_scripts
         elif [ $use_db_snapshot == "true" ]; then
             run_test_data_scripts_with_user_snapshot
         else
