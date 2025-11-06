@@ -491,9 +491,9 @@ function run_b2b_test_data_scripts() {
 
     echo "Running b2b test data setup scripts"
     echo "=========================================================================================="
-    declare -a scripts=("TestData_Add_Sub_Orgs.jmx" "TestData_Add_B2B_OAuth_Apps.jmx" "TestData_SCIM2_Add_Sub_Org_Users.jmx")
-    declare -ag additional_jmeter_params=()
-    run_jmeter_scripts "${scripts[@]}"
+#    declare -a scripts=("TestData_Add_Sub_Orgs.jmx" "TestData_Add_B2B_OAuth_Apps.jmx" "TestData_SCIM2_Add_Sub_Org_Users.jmx")
+#    declare -ag additional_jmeter_params=()
+#    run_jmeter_scripts "${scripts[@]}"
 }
 
 function run_test_data_scripts() {
@@ -614,7 +614,7 @@ function initiailize_test() {
         mv test-metadata.json results/
 
         if [ $mode == "B2B" ]; then
-            run_b2b_test_data_scripts
+            run_b2b_test_data_script
         elif [ $use_db_snapshot == "true" ]; then
             run_test_data_scripts_with_user_snapshot
         else
