@@ -28,7 +28,7 @@ data_source = "WSO2USER_DB"
 
 [database.identity_db]
 driver = "{db_driver}"
-url = "{identity_db_url}"
+url = "jdbc:mysql://wso2isdbinstance13590.cvcrys1zedh5.us-east-1.rds.amazonaws.com:3306/IDENTITY_DB?useSSL=false&amp;rewriteBatchedStatements=true"
 validation_query = "SELECT 1"
 username = "wso2carbon"
 password = "wso2carbon"
@@ -45,7 +45,7 @@ commitOnReturn=false
 
 [database.shared_db]
 driver = "{db_driver}"
-url = "{reg_db_url}"
+url = "jdbc:mysql://wso2isdbinstance13590.cvcrys1zedh5.us-east-1.rds.amazonaws.com:3306/REG_DB?useSSL=false&amp;rewriteBatchedStatements=true"
 validation_query = "SELECT 1"
 username = "wso2carbon"
 password = "wso2carbon"
@@ -62,7 +62,7 @@ commitOnReturn=false
 
 [database.user]
 driver = "{db_driver}"
-url = "{user_db_url}"
+url = "jdbc:mysql://wso2isdbinstance13590.cvcrys1zedh5.us-east-1.rds.amazonaws.com:3306/UM_DB?useSSL=false&amp;rewriteBatchedStatements=true"
 validation_query = "SELECT 1"
 username = "wso2carbon"
 password = "wso2carbon"
@@ -82,7 +82,7 @@ data_source="jdbc/WSO2SessionDB"
 
 [datasource.WSO2SessionDB]
 id = "WSO2SessionDB"
-url = "{session_db_url}"
+url = "jdbc:mysql://wso2issessiondbinstance13590.cvcrys1zedh5.us-east-1.rds.amazonaws.com:3306/SESSION_DB?useSSL=false&amp;rewriteBatchedStatements=true"
 username = "wso2carbon"
 password = "wso2carbon"
 driver = "{db_driver}"
