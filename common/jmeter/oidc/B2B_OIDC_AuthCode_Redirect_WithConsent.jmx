@@ -149,7 +149,7 @@
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
-        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="SP Counter" enabled="true">
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="SP Counter" enabled="false">
           <stringProp name="CounterConfig.start">1</stringProp>
           <stringProp name="CounterConfig.end">${noOfSPs}</stringProp>
           <stringProp name="CounterConfig.incr">1</stringProp>
@@ -204,9 +204,9 @@ String client_id = &quot;&quot;;
 String redirect_uri = &quot;&quot;;
 
 username = &quot;${usernamePrefix}${user_count_id}&quot;;
-client_secret = &quot;${consumerSecretPrefix}${sp_count_id}&quot;;
-client_id = &quot;${consumerKeyPrefix}${sp_count_id}&quot;;
-redirect_uri = &quot;${callback_url_prefix}${sp_count_id}&quot;;
+client_secret = &quot;${consumerSecretPrefix}${sp_count_id_random}&quot;;
+client_id = &quot;${consumerKeyPrefix}${sp_count_id_random}&quot;;
+redirect_uri = &quot;${callback_url_prefix}${sp_count_id_random}&quot;;
 
 vars.put(&quot;username&quot;, new String(username));
 vars.put(&quot;client_secret&quot;, new String(client_secret));
@@ -592,9 +592,9 @@ if (y == 0 || &quot;active-passive&quot;.equals(deploymentType)) {
               <stringProp name="Assertion.custom_message">Test failed - common auth login</stringProp>
             </ResponseAssertion>
             <hashTree/>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="authFailureStatus Response Assertion" enabled="true">
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="authFailure Response Assertion" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="-586227372">authFailureStatus</stringProp>
+                <stringProp name="-1792426302">authFailure</stringProp>
               </collectionProp>
               <stringProp name="Assertion.test_field">Assertion.response_headers</stringProp>
               <boolProp name="Assertion.assume_success">false</boolProp>
