@@ -24,7 +24,7 @@ declare -A test_scenario0=(
     [jmx]="oauth/OAuth_Client_Credentials_Grant.jmx"
     [tenantMode]=false
     [skip]=false
-    [modes]="FULL PUBLISH22"
+    [modes]="FULL PUBLISH2"
 )
 declare -A test_scenario1=(
     [name]="01-oidc_auth_code_redirect_with_consent"
