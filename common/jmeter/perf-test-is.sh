@@ -270,7 +270,7 @@ elif [ "$concurrency" == "50-1000" ]; then
     default_concurrent_users="50 100 150 300 500 750 1000"
 else
     echo "Running tests for concurrency level 50-3000"
-    default_concurrent_users="50 100 150 300 500 750 1000 1500 2000 2500 3000"
+    default_concurrent_users="3000"
 fi
 
 if [[ -z $test_duration ]]; then
@@ -693,7 +693,7 @@ function test_scenarios() {
                 if [ "$SHOULD_RUN" = true ]; then
 
                     # Set your target time in UTC or your system's local time
-                    TARGET_TIME="2025-11-10 17:00:00"
+                    TARGET_TIME="2025-11-11 05:40:00"
 
                     # Convert the target time to epoch timestamp
                     TARGET_EPOCH=$(date -d "$TARGET_TIME" +%s)
