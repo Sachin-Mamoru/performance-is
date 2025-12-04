@@ -258,10 +258,10 @@ if [ "$concurrency" == "50-500" ]; then
     default_concurrent_users="50 100 150 300 500"
 elif [ "$concurrency" == "500-3000" ]; then
     echo "Running tests for concurrency level 500-3000"
-    default_concurrent_users="500 750 1000 1500 2000 2500 3000"
+    default_concurrent_users="1000 1500 2000 2500 3000"
 elif [ "$concurrency" == "1000-3000" ]; then
     echo "Running tests for concurrency level 1000-3000"
-    default_concurrent_users="1000 1500 2000 2500 3000"
+    default_concurrent_users="3000"
 elif [ "$concurrency" == "50-50" ]; then
     echo "Running tests for concurrency level 50"
     default_concurrent_users="50"
@@ -491,9 +491,9 @@ function run_b2b_test_data_scripts() {
 
     echo "Running b2b test data setup scripts"
     echo "=========================================================================================="
-    declare -a scripts=("TestData_Add_Sub_Orgs.jmx" "TestData_Add_B2B_OAuth_Apps.jmx" "TestData_SCIM2_Add_Sub_Org_Users.jmx")
-    declare -ag additional_jmeter_params=()
-    run_jmeter_scripts "${scripts[@]}"
+    # declare -a scripts=("TestData_Add_Sub_Orgs.jmx" "TestData_Add_B2B_OAuth_Apps.jmx" "TestData_SCIM2_Add_Sub_Org_Users.jmx")
+    # declare -ag additional_jmeter_params=()
+    # run_jmeter_scripts "${scripts[@]}"
 }
 
 function run_test_data_scripts() {
@@ -686,32 +686,32 @@ function test_scenarios() {
 
                 jmeter_command+=" -l $report_location/results.jtl"
 
-                if [ "$SHOULD_RUN" = true ]; then
+                # if [ "$SHOULD_RUN" = true ]; then
 
-                    # Set your target time in UTC or your system's local time
-                    TARGET_TIME="2025-12-04 09:00:00"
+                #     # Set your target time in UTC or your system's local time
+                #     TARGET_TIME="2025-12-04 09:00:00"
 
-                    # Convert the target time to epoch timestamp
-                    TARGET_EPOCH=$(date -d "$TARGET_TIME" +%s)
+                #     # Convert the target time to epoch timestamp
+                #     TARGET_EPOCH=$(date -d "$TARGET_TIME" +%s)
 
-                    # Show the target time and epoch
-                    echo "Target time     : $TARGET_TIME"
-                    echo "Target epoch    : $TARGET_EPOCH"
-                    echo "Current time    : $(date)"
-                    echo "Current epoch   : $(date +%s)"
-                    echo "Waiting until the target time..."
+                #     # Show the target time and epoch
+                #     echo "Target time     : $TARGET_TIME"
+                #     echo "Target epoch    : $TARGET_EPOCH"
+                #     echo "Current time    : $(date)"
+                #     echo "Current epoch   : $(date +%s)"
+                #     echo "Waiting until the target time..."
 
-                    # Wait until the current epoch reaches or exceeds the target epoch
-                    while [ $(date +%s) -lt $TARGET_EPOCH ]; do
-                        sleep 0.5
-                    done
+                #     # Wait until the current epoch reaches or exceeds the target epoch
+                #     while [ $(date +%s) -lt $TARGET_EPOCH ]; do
+                #         sleep 0.5
+                #     done
 
-                    # When the time has come
-                    echo "It's time! Starting at: $(date)"
+                #     # When the time has come
+                #     echo "It's time! Starting at: $(date)"
 
-                    # Set the variable to false so it doesn't run again
-                    SHOULD_RUN=false
-                fi
+                #     # Set the variable to false so it doesn't run again
+                #     SHOULD_RUN=false
+                # fi
 
                 echo ""
                 echo "Starting JMeter Client with JVM_ARGS=$JVM_ARGS"
