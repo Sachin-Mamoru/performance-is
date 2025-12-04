@@ -491,9 +491,9 @@ function run_b2b_test_data_scripts() {
 
     echo "Running b2b test data setup scripts"
     echo "=========================================================================================="
-#    declare -a scripts=("TestData_Add_Sub_Orgs.jmx" "TestData_Add_B2B_OAuth_Apps.jmx" "TestData_SCIM2_Add_Sub_Org_Users.jmx")
-#    declare -ag additional_jmeter_params=()
-#    run_jmeter_scripts "${scripts[@]}"
+    declare -a scripts=("TestData_Add_Sub_Orgs.jmx" "TestData_Add_B2B_OAuth_Apps.jmx" "TestData_SCIM2_Add_Sub_Org_Users.jmx")
+    declare -ag additional_jmeter_params=()
+    run_jmeter_scripts "${scripts[@]}"
 }
 
 function run_test_data_scripts() {
@@ -509,9 +509,9 @@ function run_test_data_scripts_with_user_snapshot() {
 
     echo "Running test data setup scripts with snapshot"
     echo "=========================================================================================="
-#    declare -a scripts=("TestData_Add_OAuth_Apps.jmx" "TestData_Add_OAuth_Apps_Requesting_Claims.jmx" "TestData_Add_OAuth_Apps_Without_Consent.jmx" "TestData_Add_SAML_Apps.jmx" "TestData_Add_Device_Flow_OAuth_Apps.jmx" "TestData_Add_OAuth_Idps.jmx" "TestData_Get_OAuth_Jwt_Token.jmx")
-#    declare -ag additional_jmeter_params=("jwtTokenUserPassword=$jwt_token_user_password" "jwtTokenClientSecret=$jwt_token_client_secret")
-#    run_jmeter_scripts "${scripts[@]}"
+    declare -a scripts=("TestData_Add_OAuth_Apps.jmx" "TestData_Add_OAuth_Apps_Requesting_Claims.jmx" "TestData_Add_OAuth_Apps_Without_Consent.jmx" "TestData_Add_SAML_Apps.jmx" "TestData_Add_Device_Flow_OAuth_Apps.jmx" "TestData_Add_OAuth_Idps.jmx" "TestData_Get_OAuth_Jwt_Token.jmx")
+    declare -ag additional_jmeter_params=("jwtTokenUserPassword=$jwt_token_user_password" "jwtTokenClientSecret=$jwt_token_client_secret")
+    run_jmeter_scripts "${scripts[@]}"
 }
 
 function run_tenant_test_data_scripts() {
@@ -689,7 +689,7 @@ function test_scenarios() {
                 if [ "$SHOULD_RUN" = true ]; then
 
                     # Set your target time in UTC or your system's local time
-                    TARGET_TIME="2025-12-04 08:30:00"
+                    TARGET_TIME="2025-12-04 09:00:00"
 
                     # Convert the target time to epoch timestamp
                     TARGET_EPOCH=$(date -d "$TARGET_TIME" +%s)
